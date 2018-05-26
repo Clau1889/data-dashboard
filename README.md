@@ -117,4 +117,5 @@ Si existiera esta herramienta, Mayra cree que podría agilizar su trabajo, senti
 
 ## Sketch del flujo de la aplicación
 
-link
+Link:
+https://www.canva.com/design/DAC4x-Yrkso/z6jbu_lHtcFINuMaerlHYw/view?utm_content=DAC4x-Yrkso&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton
