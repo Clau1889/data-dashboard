@@ -1,6 +1,6 @@
 # Data Dashboard
 
-* **Integrantes:** _Claudia Trujillo, Ambar de Alejandría_
+* **Integrantes del equipo:** _Claudia Trujillo, Ambar de Alejandría_
 * **Curso:** _Creando tu primer sitio web interactivo_
 * **Unidad:** _Producto final_
 
@@ -107,9 +107,8 @@ Buscará satisfacer las necesidades de las Training Managers y del equipo de for
 
 ## Historia de usuario
 
-![Alt text](assets/images/mayra.png)
+![Alt text](assets/images/may.png)
 --
-
 Mayra es una mujer que se desempeña como training manager de Laboratoria en la sede de Monterrey, México. Para desempeñar su función necesita acceder a información relacionada a las estudiantes que aprenden en dicha institución y de las cuales está a cargo. Con dicha información interpreta resultados, realiza evaluaciones, y toma desiciones. Estos procesos los realiza todos los días para poder trabajar de manera óptima, e invierte aproximadamente dos días a la semana para actualizar data.
 A Mayra le encanta su trabajo, pero generalmente se siente muy frustada porque invierte mucho tiempo tratando de encontrar la información que necesita, la cual está localizada en muchas bases de datos (de navegación no amigable) y en archivos diferentes. A pesar de que Mayra se ha acostumbrado a esta forma de acceder a la información, desearía encontrar una herramienta que le permitiera tener toda la información en un solo lugar, y que además la representación de los datos fuera de manera gráfica para hacer más fácil la lectura y el análisis.
 
