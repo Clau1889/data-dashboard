@@ -1,6 +1,6 @@
 # Data Dashboard
 
-* **Integrantes:** _Common Core_
+* **Integrantes:** _Claudia Trujillo, Ambar de Alejandría_
 * **Curso:** _Creando tu primer sitio web interactivo_
 * **Unidad:** _Producto final_
 
@@ -29,49 +29,93 @@ Para poder optimizar el tiempo de las TMs se construirá una herramienta web don
 -----
 
 ## Flujo de Trabajo
+###### _En esta sección presentamos el flujo de trabajo que seguimos para poder realizar este reto. La realización de este flujo tuvo el objetivo de fijar una dirección clara en nuestras actividades a la vez que nos permitió tener una mejor organización para realizarlas._
+
+
+El flujo se divide en las siguientes etapas:
 
 #### Investigación:
-- Revisión de los requisitos del reto.
+- Revisión de los requerimientos.
 - Documentación de metodologías de UX para entrevistas.
 - Investigación sobre los usuarios finales.
 - Creación de preguntas para UX del producto.
 - Realización de entrevistas presenciales.
-- Encuestas a Training Managers de otras sedes, enviadas a través de internet.
+- Encuestas a las Training Managers vía online.
 - Recopilación y organización de la información rescatada.
 - Análisis de la información.
-- Definición de “el problema” que tienen las TM al que daremos solución en este primer alcance.
+- Entendimiento del problema desde el punto del
 - Realización de hipótesis.
 
 #### Ideación:
-- Realización de propuestas de posibles soluciones al problema considerando los requerimientos dados por el reto.
+- Realización de propuestas de posibles soluciones al problema considerando los requerimientos.
 
 #### Sketching & Prototyping:
 
 - Generación de historia de usuario.
 - Realización de la hipótesis de cómo el producto creado resolverá las necesidades de las TM.
 - Creación y diseño del sketch del flujo de la aplicación.
-- Refinamiento del primer sketch.
+
+```
+Evidencias
+```
+
+![Alt text](assets/images/r1.png)
+---
+![Alt text](assets/images/r2.png)
+---
+![Alt text](assets/images/r3.png)
+---
+![Alt text](assets/images/r4.png)
+---
+![Alt text](assets/images/r5.png)    
 
 ------
 
-## Problemática
-###### _Definición obtenida en base a la investigación realizada_
-El no poder acceder a toda la data necesaria desde un mismo lugar repercute considerablemente en el **_tiempo_** que las TMS invierten en cada búsqueda. Ya que para actualizar data, para compararla, verificarla  y obtener un estatus general de la misma, tienen que recurrir a varios archivos (de navegación no amigable), lo cual resta agilidad a dichos procesos y atrasa evaluaciones, decisiones y resultados de las propias actividades y de otras más, directa e indirectamente relacionadas. Derivando también en un estado emocional inadecuado y desfavorecedor en las TMS repercutiendo en su bienestar y en su desempeño.
+## Justificación
+###### _Obtenida en base a la investigación realizada_
+El no poder acceder a toda la data necesaria desde un mismo lugar repercute considerablemente en el **_tiempo_** que las TMS invierten en cada búsqueda. Ya que para actualizarla, compararla, verificarla  y obtener un estatus general de la misma, tienen que recurrir a varios archivos (de navegación no amigable), lo cual resta agilidad a dichos procesos y atrasa evaluaciones, decisiones y resultados de las propias actividades y de otras más, directa e indirectamente relacionadas. Derivando también en un estado emocional inadecuado y desfavorecedor en las TMS repercutiendo en su bienestar y en su desempeño.
 
 
 ## Hipótesis
 
-Si se desarrolla una aplicación web que **_centralice_** toda la data que las _Training Managers_ necesitan, utilizando una estructura que permita acceder a esta Data a través de **_diferentes filtros_** intuitivos  que obedezcan a sus necesidades y patrones de búsqueda,  y a la vez presente los resultados de dichos filtros en una visión general y en una particular valiéndose de distintos recursos gráficos que faciliten la lectura; y además permita la actualización sistematizada y automática de la Data. Entonces las _Training Managers_, el equipo de formación y las alumnas de **Laboratoria** podrán acceder y visualizar estos datos **fácil** y **rápidamente**.
+
+Si se desarrolla una aplicación web que **_centralice_** toda la data que las _Training Managers_ necesitan, utilizando una estructura que permita acceder a ella a través de **_diferentes filtros_** intuitivos  que obedezcan a las necesidades y patrones del usuario,  y a la vez presente los resultados de dichos filtros en una visión general y en una particular valiéndose de distintos recursos gráficos que faciliten la lectura; y además permita la actualización sistematizada y automática de la data. Entonces las _Training Managers_ y el equipo de formación de **Laboratoria** podrán acceder y visualizar estos datos **fácil** y **rápidamente**.
+
+---
+## Versiones
+
+- `VERSIÓN 1.0` -
+Buscará satisfacer las necesidades de las Training Managers. (Consulte la _Hipótesis_).
+
+- `VERSIÓN 1.1` -
+Buscará satisfacer las necesidades de las Training Managers y las del equipo de formación:
+
+  _Algunas necesidades del equipo de formación:_
+  - Información sobre qué alumnas entregan o no, links de trabajos.
+  - Historial de HSE por alumna, etc.
+
+  Con el fin de mejorar y agilizar las evaluaciones.
+
+- `VERSIÓN 1.2` -
+Buscará satisfacer las necesidades de las Training Managers y del equipo de formación. Además la aplicación mostrará un apartado especial al que podrán acceder las estudiantes de Laboratoria, con el fin de que puedan consultar la información correspondiente a sus evaluaciones.
+
+
+
+
 
 -------
 
 ## Historia de usuario
 
-Mayra es una mujer que se desempeña como training manager de Laboratoria en la sede de Monterrey, México. Para desempeñar su función necesita acceder a información relacionada a las alumnas que estudian en dicha institución y de las cuales está a cargo. Con dicha información interpreta resultados, realiza evaluaciones, y toma desiciones. Estos procesos los realiza todos los días para poder trabajar de manera óptima, e invierte aproximadamente dos días a la semana para actualizar datos.
-A Mayra le encanta su trabajo, pero generalmente se siente muy frustada porque invierte mucho tiempo tratando de encontrar la información que necesita, la cual está localizada en muchas bases de datos y en archivos diferentes. A pesar de que Mayra se ha acostumbrado a esta forma de acceder a la información, desearía encontrar una herramienta que le permitiera tener toda la información que necesita en un solo lugar, y que además la representación de los datos fuera de manera gráfica para hacer más fácil la lectura y el análisis.
+![Alt text](assets/images/mayra.png)
+--
 
-Si existiera esta herramienta Mayra cree que por fin podría sentirse muy feliz, aliviada y con mucho menos estrés al realizar esta parte tan esencial de su trabajo, ya que optimizaría su tiempo y podría invertirlo en otras actividades que son también importantes para ella.
+Mayra es una mujer que se desempeña como training manager de Laboratoria en la sede de Monterrey, México. Para desempeñar su función necesita acceder a información relacionada a las estudiantes que aprenden en dicha institución y de las cuales está a cargo. Con dicha información interpreta resultados, realiza evaluaciones, y toma desiciones. Estos procesos los realiza todos los días para poder trabajar de manera óptima, e invierte aproximadamente dos días a la semana para actualizar data.
+A Mayra le encanta su trabajo, pero generalmente se siente muy frustada porque invierte mucho tiempo tratando de encontrar la información que necesita, la cual está localizada en muchas bases de datos (de navegación no amigable) y en archivos diferentes. A pesar de que Mayra se ha acostumbrado a esta forma de acceder a la información, desearía encontrar una herramienta que le permitiera tener toda la información en un solo lugar, y que además la representación de los datos fuera de manera gráfica para hacer más fácil la lectura y el análisis.
+
+Si existiera esta herramienta, Mayra cree que podría agilizar su trabajo, sentirse más relajada y con menos estrés al realizar esta parte tan esencial de su trabajo, ya que optimizaría su tiempo y podría invertirlo en otras actividades que son también importantes para ella.
 
 
-> Nota: No olvides que es una buena práctica describir tu proyecto en este
-> archivo `README.md` y también desplegar tu web a Github Pages :smiley:.
+## Sketch del flujo de la aplicación
+
+link
