@@ -1,3 +1,128 @@
-/*
- * Estilos de tu proyecto
- */
+/*Reset*/
+html {
+  font-size: 62.5%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: rgba(255, 243, 53);
+  height: 1rem;
+  width: 100%;
+}
+
+main{
+  box-sizing: border-box;
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  top: -1rem;
+}
+
+/*DEFAULT*/
+.no-text-decoration {
+  text-decoration: none;
+}
+
+.logo {
+  width: 30%;
+  z-index: 100;
+  position: absolute;
+  left: 35%;
+  top: 2rem;
+}
+
+
+.show-me {
+  background-color:#FCF9F4;
+  box-sizing: border-box;
+  display: inline;
+  height: 100vh;
+  width: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.container-show-me {
+  height: 7rem;
+  box-sizing: border-box;
+  display: inline-block;
+  position: absolute;
+  top: 25rem;
+  left: 20%;
+
+}
+
+.container-show-me > div {
+  font-family: 'Handlee', cursive;
+  font-size: 2rem;
+  display: inline;
+  margin-left: 1rem;
+}
+
+.menu-show-me {
+  height: 7rem;
+  background-color: rgba(255, 243, 53);
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  font-size: 2rem;
+  color: #455A64;
+  padding: 1rem;
+  border-radius: .5rem;
+  display: inline;
+  margin-left: 1rem;
+}
+
+.menu-show-me i {
+  padding-left: 1rem;
+}
+
+.menu-sede {
+  height: 7rem;
+  background-color: rgba(255, 243, 53);
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  font-size: 2rem;
+  color: #455A64;
+  padding: 1rem;
+  border-radius: .5rem;
+  display: inline;
+  margin-left: 1rem;
+}
+
+.menu-sede i {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.a-lets-go {
+  background-color: #CAC2BF;
+  font-family: 'Roboto', sans-serif;
+  font-size: 2rem;
+  color: white;
+  display: inline-block;
+  padding: 1rem;
+  border-radius: .5rem;
+  width: 30rem;
+  text-align: center;
+  position: relative;
+  top: 32rem;
+  left: 17rem;;
+}
+
+.image-cont {
+  height: 100vh;
+  width: 50%;
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.img-start {
+width: 100%;
+}
