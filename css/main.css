@@ -9,7 +9,7 @@ body {
 }
 
 header {
-  background-color: rgba(255, 243, 53);
+  background-color: #FFE521;
   height: 1rem;
   width: 100%;
 }
@@ -28,11 +28,11 @@ main{
 }
 
 .logo {
-  width: 30%;
+  width: 35%;
   z-index: 100;
   position: absolute;
-  left: 35%;
-  top: 2rem;
+  left: 6%;
+  top: 4rem;
 }
 
 
@@ -53,20 +53,20 @@ main{
   display: inline-block;
   position: absolute;
   top: 25rem;
-  left: 20%;
+  left: 17%;
 
 }
 
 .container-show-me > div {
   font-family: 'Handlee', cursive;
-  font-size: 2rem;
+  font-size: 2.5rem;
   display: inline;
   margin-left: 1rem;
 }
 
 .menu-show-me {
   height: 7rem;
-  background-color: rgba(255, 243, 53);
+  background-color: #FFE521;
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
   font-size: 2rem;
@@ -83,7 +83,7 @@ main{
 
 .menu-sede {
   height: 7rem;
-  background-color: rgba(255, 243, 53);
+  background-color: #FFE521;
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
   font-size: 2rem;
@@ -111,7 +111,8 @@ main{
   text-align: center;
   position: relative;
   top: 32rem;
-  left: 17rem;;
+  left: 17rem;
+  box-shadow: 2px 2px 5px #9c9c9c;
 }
 
 .image-cont {
