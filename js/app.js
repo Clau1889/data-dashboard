@@ -5,16 +5,15 @@ var arequipa = data.AQP;
 var cdmx = data.CDMX;
 var lima = data.LIM;
 var santiago = data.SCL;
-console.log("lo que contiene la sede arquipa (data.AQP)", arequipa);
+// console.log(arequipa);
 
 //ACCEDIENDO A LAS GENERACIONES (devuelve las keys(strings) en un array)
 var aqpGenerations = Object.keys(arequipa);
 var cdmxGenerations = Object.keys(cdmx);
 var limaGenerations = Object.keys(lima);
 var stgoDeChileGenerations = Object.keys(santiago);
-console.log("lo que contiene las generaciones de arequipa (Object.keys(arequipa)",aqpGenerations);
+console.log(aqpGenerations);
 
-console.log(arequipa[aqpGenerations[0]]);
 
 
 //CREANDO FUNCION QUE CONVIERTA CUALQUIER OBJETO A UN ARRAY
@@ -30,17 +29,55 @@ var objectToArray = function(object) {
 };
 
 
-console.log(objectToArray(arequipa));
+//CONVIRTIENDO LOS OBJETOS DE LAS SEDES EN ARRAYS
+var arrayArequipa = objectToArray(arequipa);
+var arrayCdmx = objectToArray(cdmx);
+var arrayLima = objectToArray(lima);
+var arraySantiago = objectToArray(santiago);
+console.log(arrayArequipa);
 
 
-// //FORMANDO UN ARRAY CON LA INFO DE LAS SEDES para poder recorrerlo
-//
-// var arequipaArray = [
-//                       [aqpGenerations[0], arequipa[aqpGenerations[0]]],
-//                       [aqpGenerations[1], arequipa[aqpGenerations[1]]]
-//             ];
-//
-// console.log(arequipaArray);
+
+
+//CREANDO FUNCION QUE RETORNE UN ARRAY DE ESTUDIANTES DE CADA GENERACION
+// var studentsPerGeneration = function (arrayOfTheHeadquarters) {
+//   var array2dOfStudentsperGeneration = [];
+//   for (var i = 1; i < arrayOfTheHeadquarters.length; i+1 ) {
+//     var students = arrayOfTheHeadquarters[i].students;
+//     array2dOfStudentsperGeneration.push(students);
+//   }
+//   return array2dOfStudentsperGeneration;
+// };
+
+var studentsPerGeneration = function (arrayOfTheHeadquarters) {
+
+  for (var i = 1; i < arrayOfTheHeadquarters.length; i+1 ) {
+    var students = arrayOfTheHeadquarters[i].students;
+    var array2dOfStudentsperGeneration = objectToArray(students);
+  }
+  return array2dOfStudentsperGeneration;
+};
+
+
+
+//ARRAYS DE ESTUDIANTES POR SEDE, SECCIONADO EN GENERACIONES
+var studentsArequipa = studentsPerGeneration(arrayArequipa);
+var studentsLima = studentsPerGeneration(arrayLima);
+var studentsCdmx = studentsPerGeneration(arrayCdmx);
+var studentsSantiago = studentsPerGeneration(arraySantiago);
+console.log(studentsArequipa);
+
+
+
+//CREANDO FUNCIÓN QUE RETORNE EL NÚMERO DE ESTUDIANTES ACTIVAS DE CADA GENERACION
+
+
+var totalActiveStudentsPerHeadquarters = function(arrayOfTheHeadquarters) {
+    var sum = 0;
+    for (var i = 0; i < array.length; i++) {
+
+    }
+}
 
 
 
