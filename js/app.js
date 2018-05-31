@@ -15,7 +15,6 @@ var limaGenerations = Object.keys(lima);
 var stgoDeChileGenerations = Object.keys(santiago);
 console.log(aqpGenerations);
 
-
 var aqpGeneration2016 = arequipa["2016-2"];
 var aqpGeneration2017 = arequipa["2017-1"];
 
