@@ -35,85 +35,126 @@ main{
   top: 4rem;
 }
 
-
+/*Parte de la pagina que contiene el menu para elegir sede*/
 .show-me {
   background-color:#FCF9F4;
   box-sizing: border-box;
-  display: inline;
+  display: inline-block;
   height: 100vh;
   width: 50%;
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
 }
 
 .container-show-me {
-  height: 7rem;
-  box-sizing: border-box;
   display: inline-block;
-  position: absolute;
-  top: 25rem;
-  left: 17%;
-
-}
-
-.container-show-me > div {
   font-family: 'Handlee', cursive;
   font-size: 2.5rem;
-  display: inline;
-  margin-left: 1rem;
+  height: auto;
+  left: 5%;
+  margin-top: 5rem;
+  top: 17rem;
+  position: relative;
+  text-align: center;
+  width: 45rem;
 }
 
-.menu-show-me {
-  height: 7rem;
+.container-show-me > span {
+  font-family: 'Handlee', cursive;
+  font-size: 2.5rem;
+  height: auto;
+  margin-left: 1rem;
+  width: 20rem;
+}
+
+/*listas del menu vertical*/
+ul#nav{
+  outline: 1px solid pink;
+  margin-top: 2rem;
+  margin-left: 14rem;
+  padding: 0;
+  text-align: left;
+  width: 19rem;
+}
+
+#first-list{
   background-color: #FFE521;
-  box-sizing: border-box;
+  color: #000000;
   font-family: 'Roboto', sans-serif;
-  font-size: 2rem;
-  color: #455A64;
-  padding: 1rem;
-  border-radius: .5rem;
-  display: inline;
-  margin-left: 1rem;
-}
-
-.menu-show-me i {
+  font-weight: bold;
+  font-size: 1.5rem;
+  line-height: 3rem;
+  list-style: none;
   padding-left: 1rem;
+  text-decoration: none;
+  width: 18rem;
 }
 
-.menu-sede {
-  height: 7rem;
-  background-color: #FFE521;
-  box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
-  font-size: 2rem;
-  color: #455A64;
-  padding: 1rem;
-  border-radius: .5rem;
-  display: inline;
-  margin-left: 1rem;
+#first-list a{
+  text-decoration: none;
 }
 
-.menu-sede i {
+#first-list i {
+  margin-left: 7rem;
   padding-left: 1rem;
   padding-right: 1rem;
 }
 
-.a-lets-go {
-  background-color: #CAC2BF;
+.list {
+  background-color:rgba(255, 229, 33, 0.39);
   font-family: 'Roboto', sans-serif;
-  font-size: 2rem;
-  color: white;
-  display: inline-block;
-  padding: 1rem;
-  border-radius: .5rem;
-  width: 30rem;
-  text-align: center;
-  position: relative;
-  top: 32rem;
-  left: 17rem;
-  box-shadow: 2px 2px 5px #9c9c9c;
+  font-size: 1.5rem;
+  line-height: 3rem;
+  list-style: none;
+  margin-left: -4rem;
+  width: 19rem;
 }
+
+.list a{
+  color: #455A64;
+  padding-left: 1rem;
+  text-decoration: none;
+}
+
+/*Desaparece el sub-menu*/
+#nav > ul .list{
+  display: none;
+}
+
+/*Aparecer el menu cuando se pasa el mouse*/
+#nav:hover > ul .list{
+  display: block;
+}
+
+/*Al pasar el mouse se coloree la lista del menu*/
+.list:hover{
+  background-color: rgba(250, 223, 16, 0.596);
+}
+
+/*Al hacer click en la lista del menu seleccionado, el color del texto cambie*/
+.list > a:active{
+  color: #ffffff;
+  font-weight: bold;
+}
+
+/*Boton de "Let's Go"
+.btn-lets-go {
+  background-color: #CAC2BF;
+  border: none;
+  border-radius: .5rem;
+  color:#000000;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  font-size: 2rem;
+  left: 10rem;
+  padding: 1rem;
+  position: relative;
+  text-align: center;
+  top: 23rem;
+  width: 30rem;
+  box-shadow: 2px 2px 5px #9c9c9c;
+}*/
 
 .image-cont {
   height: 100vh;
