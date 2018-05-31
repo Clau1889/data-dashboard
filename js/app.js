@@ -34,7 +34,7 @@ var arrayArequipa = objectToArray(arequipa);
 var arrayCdmx = objectToArray(cdmx);
 var arrayLima = objectToArray(lima);
 var arraySantiago = objectToArray(santiago);
-console.log(arrayArequipa);
+console.log(arrayArequipa[1]);
 
 
 
@@ -50,21 +50,21 @@ console.log(arrayArequipa);
 // };
 
 var studentsPerGeneration = function (arrayOfTheHeadquarters) {
-
-  for (var i = 1; i < arrayOfTheHeadquarters.length; i+1 ) {
-    var students = arrayOfTheHeadquarters[i].students;
-    var array2dOfStudentsperGeneration = objectToArray(students);
-  }
-  return array2dOfStudentsperGeneration;
+    console.log(arrayOfTheHeadquarters);
+  // for (var i = 1; i < arrayOfTheHeadquarters.length; i+1 ) {
+  //   var students = arrayOfTheHeadquarters[i].students;
+  //   var array2dOfStudentsperGeneration = objectToArray(students);
+  // }
+  // return array2dOfStudentsperGeneration;
 };
 
 
 
 //ARRAYS DE ESTUDIANTES POR SEDE, SECCIONADO EN GENERACIONES
 var studentsArequipa = studentsPerGeneration(arrayArequipa);
-var studentsLima = studentsPerGeneration(arrayLima);
-var studentsCdmx = studentsPerGeneration(arrayCdmx);
-var studentsSantiago = studentsPerGeneration(arraySantiago);
+// var studentsLima = studentsPerGeneration(arrayLima);
+// var studentsCdmx = studentsPerGeneration(arrayCdmx);
+// var studentsSantiago = studentsPerGeneration(arraySantiago);
 console.log(studentsArequipa);
 
 
