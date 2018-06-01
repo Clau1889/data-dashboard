@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Anton|Handlee|Quicksand|Roboto|Tajawal" rel="stylesheet">
+    <link rel="stylesheet" href="css/location.css">
+    <title>Sede</title>
+</head>
+<body>
+    <header id="header">
+        <a href="index.html"><img src="assets/images/logo-laboratoria.svg" alt="logo-laboratoria"></a>
+    </header>
+    <main>
+        <!--Se realizaran contenedor fijo del nombre de la sede seleccionada y menu vertical para generacion-->
+        <section id="contain-loc-gen">
+            <h2 id="name-location">Nombre sede</h2>
+            <select id="menu-generation"> Generation</select>
+        </section>
+
+        <!--Creando 5 pestañas fijas dónde se mostrará información solicitada-->
+        <section id="contain-menu">
+            <ul id="list">
+                <li id="tab1" class="tab"><a href=''>Students</a></li>
+                <li id="tab2" class="tab"><a href=''>Grades</a></li>
+                <li id="tab3" class="tab"><a href=''>Outstanding Students</a></li>
+                <li id="tab4" class="tab"><a href=''>Coaches</a></li>
+                <li id="tab5" class="tab"><a href=''>Jedi Masters</a></li>
+            </ul>
+        </section>
+
+        <!--Aqui se le dara el evento de carga del contenido para cada pestañas -->
+        <body id="load">
+
+        <!--Contenedores de contenido segun pestañas --> 
+        <section id="box-cont">
+            <div id="cont-Tab1"></div>
+            <div id="cont-Tab2"></div>
+            <div id="cont-Tab3"></div>
+            <div id="cont-Tab4"></div>
+            <div id="cont-Tab5"></div>
+        </section>
+    </main>
+
+    <script src="js/location.js"></script>
+    <script src="js/data.js"></script>
+</body>
+</html>
