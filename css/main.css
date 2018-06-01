@@ -121,7 +121,7 @@ ul#nav{
   display: none;
 }
 
-/*Aparecer el menu cuando se pasa el mouse*/
+/* Aparecer el menu cuando se pasa el mouse */
 #nav:hover > ul .list{
   display: block;
 }

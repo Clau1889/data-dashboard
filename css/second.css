@@ -11,6 +11,7 @@ header{
     position:fixed;
     top: 0;
     width:100vw;
+    z-index: 1;
 }
 
 a img{
@@ -79,8 +80,23 @@ li.tab{
     width: auto;
 }
 
+li.tab:hover{
+    background-color: #e4e0e0;
+}
+
 li.tab > a{
     text-decoration: none;
     color: #000000;
     font-weight: bold;
 }
+
+li.tab > a:hover{
+    color: rgba(190, 80, 80, 0.877);
+}
+
+/* Desaparece las pestañas
+#contain-menu > ul{
+    display: none;
+} */
+
+
