@@ -1,3 +1,5 @@
+
+
 //console.log(Object.keys(data));
 
 //ACCEDIENDO  A LAS SEDES (devuelve un objeto)
@@ -94,36 +96,36 @@ console.log(arrayArequipa);
 
 
 
-//
-// //Obteniendo el total de estudiantes presentes por sede.
-// //AREQUIPA
-//
-// var totalStudentsPerHeadquarters = function(sede){
-//   var sum = 0;
-//   for(var i = 0; i < aqpGenerations.length; i++){
-//       var students = arequipa[aqpGenerations[i]].students;
-//       var totalStudentsperGeneration = Object.keys(students).length;
-//       console.log(totalStudentsperGeneration);
-//
-//       sum += totalStudentsperGeneration;
-//   }
-//
-//   return console.log(sum);
-// };
-//
-// console.log(totalStudentsPerHeadquarters(arequipa));
-//
-//
-//
-//
-// /*var totalStudentsPerHeadquarters = function(generation){
-//   var sum = 0;
-//   for(var i = 0; i < aqpGenerations.length; i++){
-//       var students = aqpGenerations[i].students;
-//
-//       sum = students;
-//   }
-//   sum++;
-//
-//   return console.log(students);
-// };*/
+
+//Obteniendo el total de estudiantes presentes por sede.
+//AREQUIPA
+
+var totalStudentsPerHeadquarters = function(sede){
+  var sum = 0;
+  for(var i = 0; i < aqpGenerations.length; i++){
+      var students = arequipa[aqpGenerations[i]].students;
+      var totalStudentsperGeneration = Object.keys(students).length;
+      console.log(totalStudentsperGeneration);
+
+      sum += totalStudentsperGeneration;
+  }
+
+  return console.log(sum);
+};
+
+console.log(totalStudentsPerHeadquarters(arequipa));
+
+
+
+
+/*var totalStudentsPerHeadquarters = function(generation){
+  var sum = 0;
+  for(var i = 0; i < aqpGenerations.length; i++){
+      var students = aqpGenerations[i].students;
+
+      sum = students;
+  }
+  sum++;
+
+  return console.log(students);
+};*/
