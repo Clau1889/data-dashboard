@@ -36,50 +36,47 @@ var arrayArequipa = objectToArray(arequipa);
 var arrayCdmx = objectToArray(cdmx);
 var arrayLima = objectToArray(lima);
 var arraySantiago = objectToArray(santiago);
-console.log(arrayArequipa[1]);
-
-
+console.log(arrayArequipa);
 
 
 //CREANDO FUNCION QUE RETORNE UN ARRAY DE ESTUDIANTES DE CADA GENERACION
+// var arrayOfActiveStudentsperGeneration (arrayOfTheHeadquarters){
+//     for(var students)
+// }
+
+
 // var studentsPerGeneration = function (arrayOfTheHeadquarters) {
-//   var array2dOfStudentsperGeneration = [];
+//     console.log(arrayOfTheHeadquarters);
 //   for (var i = 1; i < arrayOfTheHeadquarters.length; i+1 ) {
-//     var students = arrayOfTheHeadquarters[i].students;
-//     array2dOfStudentsperGeneration.push(students);
-//   }
-//   return array2dOfStudentsperGeneration;
+//     var students = arrayOfTheHeadquarters[i].students[i];
+//
+//   //   var array2dOfStudentsperGeneration = objectToArray(students);
+//    }
+//    return students;
+//   // return array2dOfStudentsperGeneration;
 // };
-
-var studentsPerGeneration = function (arrayOfTheHeadquarters) {
-    console.log(arrayOfTheHeadquarters);
-  // for (var i = 1; i < arrayOfTheHeadquarters.length; i+1 ) {
-  //   var students = arrayOfTheHeadquarters[i].students;
-  //   var array2dOfStudentsperGeneration = objectToArray(students);
-  // }
-  // return array2dOfStudentsperGeneration;
-};
-
+//
+// console.log(studentsPerGeneration(arrayArequipa));
 
 
 //ARRAYS DE ESTUDIANTES POR SEDE, SECCIONADO EN GENERACIONES
-var studentsArequipa = studentsPerGeneration(arrayArequipa);
+// var studentsArequipa = studentsPerGeneration(arrayArequipa);
 // var studentsLima = studentsPerGeneration(arrayLima);
 // var studentsCdmx = studentsPerGeneration(arrayCdmx);
 // var studentsSantiago = studentsPerGeneration(arraySantiago);
-console.log(studentsArequipa);
+// console.log(studentsArequipa);
 
 
 
 //CREANDO FUNCIÓN QUE RETORNE EL NÚMERO DE ESTUDIANTES ACTIVAS DE CADA GENERACION
 
 
-var totalActiveStudentsPerHeadquarters = function(arrayOfTheHeadquarters) {
-    var sum = 0;
-    for (var i = 0; i < array.length; i++) {
-
-    }
-}
+// var totalActiveStudentsPerHeadquarters = function(arrayOfTheHeadquarters) {
+//     var sum = 0;
+//     for (var i = 0; i < array.length; i++) {
+//
+//     }
+// };
 
 
 
