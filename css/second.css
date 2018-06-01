@@ -1,0 +1,102 @@
+body{
+    box-sizing: border-box;
+}
+
+/**HEADER**/
+header{
+    background-color: #FFE521; 
+    border: 1.5px solid #cfc9c977;
+    height:auto;
+    left: 0;
+    position:fixed;
+    top: 0;
+    width:100vw;
+    z-index: 1;
+}
+
+a img{
+    max-height: 13vh;
+    margin-left: 40vw;
+    width: 35%;
+}
+/**CONTENEDOR MAIN**/
+main{
+    height: auto;
+    left: 0;
+    position: relative;
+    top: 4.5rem;
+    width: 100%;
+}
+
+/**SECTION TITULO-GENERACION**/
+section#contain-loc-gen{
+    height: auto;
+    margin-left: 2rem;
+    width: 18%;
+}
+
+/**TITULO-SEDE**/
+h2#name-location{
+    font-family: 'Handlee', cursive;/*no me esta aceptando el valor*/
+    font-weight: bold;
+}
+
+/**MENU DE GENERACION**/
+select#menu-generation{
+    background-color:#ffffff;
+    border: 1px solid #c6c6c6;
+    border-radius: 5%;
+    font-family:'Roboto', sans-serif;
+    font-weight: bold;
+    height: 2rem;
+    width: 11rem;
+}
+ 
+/**PESTANAS/TABS**/
+section#contain-menu{
+    height: auto;
+    margin-left: 0;
+    width:100%;
+}
+
+section > ul{
+    height: auto;
+    margin-left: -0.3rem;
+    margin-top: 3rem;
+    width: 95%;
+}
+
+li.tab{
+    background-color: rgba(248, 220, 6, 0.486);
+    border: 1px solid #c6c6c6;
+    border-radius: 5%;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    display: inline-block;
+    height: auto;
+    list-style: none;
+    margin-left:-0.2rem;
+    padding: 0.5rem;
+    width: auto;
+}
+
+li.tab:hover{
+    background-color: #e4e0e0;
+}
+
+li.tab > a{
+    text-decoration: none;
+    color: #000000;
+    font-weight: bold;
+}
+
+li.tab > a:hover{
+    color: rgba(190, 80, 80, 0.877);
+}
+
+/* Desaparece las pestañas
+#contain-menu > ul{
+    display: none;
+} */
+
+
