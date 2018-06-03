@@ -37,6 +37,7 @@ for (var i=0; i<totalGeneration.length; i++){
     var eachGeneration= totalGeneration[i];
 
 
+
     //CREAR ELEMENTOS DE SELECTION
     var option= document.createElement('option');
     var textOption= document.createTextNode(eachGeneration);
@@ -81,31 +82,82 @@ var cdmxGenerations = Object.keys(cdmx);
 console.log(cdmxGenerations);
 
 
-//CONVIRTIENDO arraySede en ARRAY
-// var newArraySede = objectToArray(arraySede);
-// console.log(newArraySede);
+/***********************CONVIRTIENDO arraySede en ARRAY***********************/
+var newArraySede = objectToArray(arraySede);
+console.log(newArraySede);
 
-
+var arrayCdmx = objectToArray(cdmx);
+console.log(arrayCdmx);
 
 /*****************FUNCIÓN QUE ARROJA EL TOTAL DE ESTUDIANTES POR SEDE************************************/
 var totalStudentsPerHeadquarters = function(headquarters){
-  var generationsOfHeadquarters= Object.keys(headquarters);
-  var sum = 0;
-  for(var i = 0; i < generationsOfHeadquarters.length; i++){
-      var students = headquarters[generationsOfHeadquarters[i]].students;
-      var totalStudentsperGeneration = Object.keys(students).length;
-      console.log(totalStudentsperGeneration);
+    var generationsOfHeadquarters= Object.keys(headquarters);
+    console.log(generationsOfHeadquarters);
+    var sum = 0;
+    for(var i = 0; i < generationsOfHeadquarters.length; i++){
+        var students = headquarters[generationsOfHeadquarters[i]].students;
+        var totalStudentsperGeneration = Object.keys(students).length;
+        console.log(totalStudentsperGeneration);
 
-      sum += totalStudentsperGeneration;
-  }
+        sum += totalStudentsperGeneration;
+    }
 
-  return sum;
+    return sum;
 };
 
 console.log(totalStudentsPerHeadquarters(arraySede));
 
 
+/*****************FUNCIÓN QUE ARROJA EL TOTAL DE ESTUDIANTES ACTIVAS POR SEDE************************************/
+var totalActiveStudentsPerHeadquarters = function(headquarters){
+    var generationsOfHeadquarters= Object.keys(headquarters);
+    console.log(generationsOfHeadquarters);//["2017-1", "2017-2"]
+    var sum = 0;
+    for(var i = 0; i < generationsOfHeadquarters.length; i++){
+        var students = headquarters[generationsOfHeadquarters[i]].students;
+        console.log(students);
+        for(var obj in students){
+          var activeStudents = students[obj].active;
+          console.log(activeStudents);
+        }
 
+      }
+  return students;
+};
+
+console.log(totalActiveStudentsPerHeadquarters(arraySede));
+
+
+// var generation
+// var arrayHeadquarters = objectToArray(arraySede);
+//     console.log(arrayHeadquarters.length);
+// for(var i = 1; i < arrayHeadquarters.length; i+2){
+//       var valueOfElementOfArrayHeadquarters = arrayHeadquarters[i];
+//     console.log(valueOfElementOfArrayHeadquarters);
+//     if(i > arrayHeadquarters.length){
+//       break;
+//     }
+//   }
+//     var valueOfElementOfArrayHeadquarters = arrayHeadquarters[i];
+//     console.log(valueOfElementOfArrayHeadquarters);
+// }
+
+
+
+
+
+
+
+
+
+/*****************FUNCIÓN QUE ARROJA EL TOTAL DE ESTUDIANTES ACTIVAS POR SEDE************************************/
+// var totalActiveStudentsPerHeadquarters = function(sede){
+//   var arrayOfTheObject = objectToArray(sede);
+//   var arrayStudentsperGeneration = studentsPerGeneration(arrayOfTheObject);
+//   return arrayStudentsperGeneration;
+// };
+//
+// console.log(arrayStudentsperGeneration);
 
 
 
