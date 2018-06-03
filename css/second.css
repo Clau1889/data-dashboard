@@ -32,13 +32,16 @@ main{
 section#contain-loc-gen{
     height: auto;
     margin-left: 2rem;
-    width: 18%;
+    width: auto;
+    
 }
 
 /**TITULO-SEDE**/
 h1#name-location{
     font-family: 'Handlee', cursive;/*no me esta aceptando el valor*/
+    font-size: 2rem;
     font-weight: bold;
+    width: auto;
 }
 
 /**SUBTITULO PARA ESCOGER GENERACION**/
@@ -55,7 +58,7 @@ select#menu-generation{
     border-radius: 5%;
     font-family:'Roboto', sans-serif;
     font-weight: bold;
-    height: 2rem;
+    height: auto;
     width: 11rem;
 }
  
@@ -105,5 +108,16 @@ li.tab > a:hover{
 #contain-menu > ul{
     display: none;
 } */
+
+/*Opciones*/
+#option{
+    background-color: rgba(250, 240, 169, 0.849);
+    color: rgba(194, 32, 32, 0.924);
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+
 
 
