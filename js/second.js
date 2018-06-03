@@ -74,11 +74,67 @@ var objectToArray = function(object) {
   return array2d;
 };
 
+var cdmx = data.CDMX;
+console.log(cdmx);
+
+var cdmxGenerations = Object.keys(cdmx);
+console.log(cdmxGenerations);
+
+
+//CONVIRTIENDO arraySede en ARRAY
+// var newArraySede = objectToArray(arraySede);
+// console.log(newArraySede);
+
+
+
+/*****************FUNCIÓN QUE ARROJA EL TOTAL DE ESTUDIANTES POR SEDE************************************/
+var totalStudentsPerHeadquarters = function(headquarters){
+  var generationsOfHeadquarters= Object.keys(headquarters);
+  var sum = 0;
+  for(var i = 0; i < generationsOfHeadquarters.length; i++){
+      var students = headquarters[generationsOfHeadquarters[i]].students;
+      var totalStudentsperGeneration = Object.keys(students).length;
+      console.log(totalStudentsperGeneration);
+
+      sum += totalStudentsperGeneration;
+  }
+
+  return sum;
+};
+
+console.log(totalStudentsPerHeadquarters(arraySede));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /***********************************CONVIRTIENDO EL OBJETO DATA A ARRAY*********************************/
-var arrayData = objectToArray(data);
+//var arrayData = objectToArray(data);
 // console.log(data);
-var dataToArray = objectToArray(arrayData);
+//var dataToArray = objectToArray(arrayData);
 // console.log(dataToArray);
 
 
@@ -133,10 +189,7 @@ var dataToArray = objectToArray(arrayData);
 // console.log(aqpGenerations);
 
 
-/********* APARECER TABS HASTA QUE SE SELECCIONE GENERACION*********/
-
-
-
+/************************** APARECER TABS HASTA QUE SE SELECCIONE GENERACION*************************************/
 
 
 /****************************CONVIRTIENDO LOS OBJETOS DE LAS SEDES EN ARRAYS*******************************/
