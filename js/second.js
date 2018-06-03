@@ -13,10 +13,18 @@ console.log(getParameterByName('sede'));
 
 //OBTENER UN ARREGLO DE LA SEDE SELECCIONADA
 var arraySede = data[getParameterByName('sede')];
-
-var titleSede
 console.log(arraySede);
 
+/***************COLOCANDO NOMBRE SEDE SELECCIONADA**********/
+if (getParameterByName('sede') === 'CDMX') {
+    var getNameLocation = document.getElementById('name-location').innerHTML = 'CDMX, México';
+} else if (getParameterByName('sede') === 'AQP') {
+    var getNameLocation = document.getElementById('name-location').innerHTML = 'Arequipa, Perú';
+} else if (getParameterByName('sede') === 'LIM') {
+    var getNameLocation = document.getElementById('name-location').innerHTML = 'Lima, Perú ';
+} else if (getParameterByName('sede') === 'SCL') {
+    var getNameLocation = document.getElementById('name-location').innerHTML = 'Santiago de Chile, Chile';
+};
 
 /*********************** ENCONTRANDO GENERACIONES*****************************/
 //OBTENER TOTAL DE GENERACIONES
@@ -39,8 +47,10 @@ for (var i=0; i<totalGeneration.length; i++){
     //INDICAR POSICION DE HERENCIA
     option.appendChild(textOption);
     menuGeneration.appendChild(option);
+
 }; 
 
+/********* APARECER TABS HASTA QUE SE SELECCIONE GENERACION*********/
 
 
 
