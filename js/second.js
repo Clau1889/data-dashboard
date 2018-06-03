@@ -33,6 +33,7 @@ var totalGeneration= Object.keys(arraySede);
 
 //CREAR LOS OPTIONS(generaciones encontradas por sede)
 var menuGeneration = document.getElementById('menu-generation');
+
 for (var i=0; i<totalGeneration.length; i++){
     var eachGeneration= totalGeneration[i];
 
@@ -48,11 +49,65 @@ for (var i=0; i<totalGeneration.length; i++){
     option.appendChild(textOption);
     menuGeneration.appendChild(option);
 
-}; 
+    };
 
-/********* APARECER TABS HASTA QUE SE SELECCIONE GENERACION*********/
+/*****************FUNCIÓN QUE ARROJA EL TOTAL DE ESTUDIANTES POR SEDE************************************/
+var totalStudentsPerHeadQuarters = function(headQuarters){
+    var generationsOfHeadquarters= Object.keys(headQuarters);
+    var sum = 0;
+    for(var i = 0; i < generationsOfHeadquarters.length; i++){
+        var students = headQuarters[generationsOfHeadquarters[i]].students;
+        //console.log(students);
+        var totalStudentsperGeneration = Object.keys(students).length;
+        //console.log(totalStudentsperGeneration);
+  
+        sum += totalStudentsperGeneration;
+    }
+  
+    return sum;
+  };
+  
+  console.log(totalStudentsPerHeadQuarters(arraySede));
 
 
+/*****************CREANDO FUNCION QUE SACA ESTUDIANTES ACTIVAS E INACTIVAS************************/
 
+var activeStudents = function (totalActiveStudents) {
+    //ENTRAR A LAS LLAVES DE LAS GENERACIONES
+    var generations = Object.keys(totalActiveStudents);
+    console.log(generations);
 
+    //INICIALIZANDO CONTADORES PARA ESTUDIATNES ACTIVAS E INACTIVAS
+    var active = 0;
+    var inactive = 0;
+
+    //ENTRAR A CADA GENERACION POR SEDE
+    for (var i = 0; i < generations.length; i++) {
+        var students = totalActiveStudents[generations[i]].students;
+        console.log(students);
+        var totalStudentsperGeneration = Object.keys(students).length;
+        console.log(totalStudentsperGeneration);
+
+        //ENTRAR A LAS ESTUDIANTES POR GENERACION
+        for (var j = 0; j < totalStudentsperGeneration; j++) {
+            var studentsStatus = students[j].active;
+            console.log(studentsStatus);
+
+            //SI LA ESTUDIANTE ESTA ACTIVA
+            if (studentsStatus == true) {
+                active = active + 1;
+
+            //SI LA ESTUDIANTE ESTA INACTIVA
+            } else if (studentsStatus == false) {
+                inactive = inactive + 1;
+            }
+        }
+        console.log(active);
+        console.log(inactive);
+        //CUANDO SUMA ACTIVAS O INACTIVAS DE UNA GENERACION- SE REINICIA EN "CERO" PARA CONTAR LA SIGUIENTE GENERACION
+        active = 0;
+        inactive = 0;
+    }
+};
+console.log(activeStudents(arraySede));
 

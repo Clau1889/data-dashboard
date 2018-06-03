@@ -72,7 +72,7 @@ section#contain-menu{
 section > ul{
     height: auto;
     margin-left: -0.3rem;
-    margin-top: 3rem;
+    margin-top: 5rem;
     width: 95%;
 }
 
@@ -104,10 +104,6 @@ li.tab > a:hover{
     color: rgba(190, 80, 80, 0.877);
 }
 
-/* Desaparece las pestañas
-#contain-menu > ul{
-    display: none;
-} */
 
 /*Opciones*/
 #option{
