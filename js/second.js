@@ -1,7 +1,4 @@
-// PARA CONOCER LA LOCATION
-var urlParams = new URLSearchParams(window.location.search);
-// console.log(urlParams.toString());
-
+/***********************ENCONTRANDO SEDE ***********************/
 //FUNCION: "query-string PARA ACCEDER A LOS VALORES DE LA SEDE REQUERIDA
 function getParameterByName(name, url) {
     if (!url) url = window.location.href;
@@ -12,10 +9,40 @@ function getParameterByName(name, url) {
     if (!results[2]) return '';
     return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
-// console.log(getParameterByName('sede'));
+console.log(getParameterByName('sede'));
 
- var arraySede= data[getParameterByName('sede')];
-// console.log(arraySede);
+//OBTENER UN ARREGLO DE LA SEDE SELECCIONADA
+var arraySede = data[getParameterByName('sede')];
+
+var titleSede
+console.log(arraySede);
+
+
+/*********************** ENCONTRANDO GENERACIONES*****************************/
+//OBTENER TOTAL DE GENERACIONES
+var totalGeneration= Object.keys(arraySede);
+    console.log(totalGeneration); 
+
+//CREAR LOS OPTIONS(generaciones encontradas por sede)
+var menuGeneration = document.getElementById('menu-generation');
+for (var i=0; i<totalGeneration.length; i++){
+    var eachGeneration= totalGeneration[i];
+
+    //CREAR ELEMENTOS DE SELECTION
+    var option= document.createElement('option');
+    var textOption= document.createTextNode(eachGeneration);
+
+    //CREAR ATRIBUTOS A ELEMENTOS
+    option.setAttribute('id','option');
+    option.setAttribute('value', 'generation');
+
+    //INDICAR POSICION DE HERENCIA
+    option.appendChild(textOption);
+    menuGeneration.appendChild(option);
+}; 
+
+
+
 
 
 

@@ -36,9 +36,16 @@ section#contain-loc-gen{
 }
 
 /**TITULO-SEDE**/
-h2#name-location{
+h1#name-location{
     font-family: 'Handlee', cursive;/*no me esta aceptando el valor*/
     font-weight: bold;
+}
+
+/**SUBTITULO PARA ESCOGER GENERACION**/
+section#contain-loc-gen > h4{
+    font-family:'Roboto', sans-serif;
+    margin-bottom:0;
+    width: 11rem;
 }
 
 /**MENU DE GENERACION**/
