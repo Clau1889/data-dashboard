@@ -53,11 +53,7 @@ for (var i=0; i<totalGeneration.length; i++){
 }; 
 
 
-
-
 /***REQUERIMIENTO 1: FUNCIÓN QUE ARROJA EL TOTAL DE ESTUDIANTES POR SEDE*************/
-
-
 var totalStudentsPerHeadQuarters = function(headQuarters){
     var generationsOfHeadquarters= Object.keys(headQuarters);
     var sum = 0;
@@ -74,12 +70,6 @@ var totalStudentsPerHeadQuarters = function(headQuarters){
   };
 
   console.log(totalStudentsPerHeadQuarters(arraySede));
-
-
-
-
-
-
 
 /******REQUERIMIENTO 2: SE CREA FUNCION GENERAL DEPENDIENDO LA GENERACION SELECCIONADA *********/
 function selectSede(value) {
