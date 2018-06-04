@@ -27,7 +27,7 @@ if (getParameterByName('sede') === 'CDMX') {
     var getNameLocation = document.getElementById('name-location').innerHTML = 'Santiago de Chile, Chile';
 };
 
-/******FUNCIÓN QUE ARROJA EL TOTAL DE ESTUDIANTES POR SEDE*************/
+/*REQUERIMIENTO 1: FUNCIÓN QUE ARROJA EL TOTAL DE ESTUDIANTES POR SEDE*************/
 var totalStudentsPerHeadQuarters = function(headQuarters){
     var generationsOfHeadquarters= Object.keys(headQuarters);
     var sum = 0;
@@ -45,7 +45,7 @@ var totalStudentsPerHeadQuarters = function(headQuarters){
 
   console.log(totalStudentsPerHeadQuarters(arraySede));
 
-/*********************** ENCONTRANDO GENERACIONES*****************************/
+/*******REQUERIMIENTO 2: ENCONTRANDO GENERACIONES*****************************/
 //OBTENER TOTAL DE GENERACIONES
 var totalGeneration= Object.keys(arraySede);
     console.log(totalGeneration); 
@@ -70,7 +70,7 @@ for (var i=0; i<totalGeneration.length; i++){
     menuGeneration.appendChild(option);
 }; 
 
-/**************SE CREA FUNCION GENERAL DEPENDIENDO LA GENERACION SELECCIONADA *********/
+/*****REQUERIMIENTO 2: SE CREA FUNCION GENERAL DEPENDIENDO LA GENERACION SELECCIONADA *********/
 function selectSede(value) {
     var getGeneration = document.getElementById(value).textContent;
     console.log(getGeneration);
@@ -106,73 +106,3 @@ function selectSede(value) {
     }
     
 };
-
-/*****REQUERIMIENTO N.3: CANTIDAD Y PORCENTAJE DE ESTUDIANTES EXITOSAS POR GENERACION****************/
-/*************************(superan la meta del 70% y siguen activas)***********************************/
-
-//FUNCION QUE RETORNA UN ARRAY2D CON LAS ESTUDIANTES POR GENERACION DE CADA SEDE
-var arrayOfStudentsPerHeadquarters = function(headquarters){
-    var generationsOfHeadquarters= Object.keys(headquarters);
-    //  generationsOfHeadquarters = ["2017-1", "2017-2"]
-      var studentsperGeneration = [];
-    for(var i in generationsOfHeadquarters){
-        var students = headquarters[generationsOfHeadquarters[i]].students;
-        studentsperGeneration.push(students);
-    }
-
-    return studentsperGeneration;
-};
-
-console.log(arrayOfStudentsPerHeadquarters(arraySede));
-
-
-/************FUNCIÓN QUE RETORNA UN ARRAY CON LAS ESTUDIANTES ACTIVAS DE CADA SEDE**********************/
-var arrayOfActiveStudentsPerHeadquarters = function(headquarters){
-    var generationsOfHeadquarters= Object.keys(headquarters);
-    //  generationsOfHeadquarters = ["2017-1", "2017-2"]
-      var studentsperGeneration = [];
-      var activeStudents = [];
-      var inactiveStudents = [];
-    for(var i in generationsOfHeadquarters){
-        var students = headquarters[generationsOfHeadquarters[i]].students;
-        students.forEach(function(obj,index){
-          var statusOfTheStudent = obj.active;
-          if(statusOfTheStudent == true){
-            activeStudents.push(obj);
-          }
-        });
-    }
-
-    return activeStudents;
-};
-
-console.log(arrayOfActiveStudentsPerHeadquarters(arraySede));
-
-
-
-/************FUNCIÓN QUE RETORNA UN ARRAY2D CON LAS ESTUDIANTES ACTIVAS E INACTIVAS POR SEDE**********************/
-var statusOfTheStudentsPerHeadquarters = function(headquarters){
-    var generationsOfHeadquarters= Object.keys(headquarters);
-    //  generationsOfHeadquarters = ["2017-1", "2017-2"]
-      var studentsperHeadquarters = [];
-      var activeStudents = [];
-      var inactiveStudents = [];
-    for(var i in generationsOfHeadquarters){
-        var students = headquarters[generationsOfHeadquarters[i]].students;
-        students.forEach(function(obj,index){
-          var statusOfTheStudent = obj.active;
-          if(statusOfTheStudent == true){
-            activeStudents.push(obj);
-          } else{
-            inactiveStudents.push(obj);
-          }
-        });
-    }
-    studentsperHeadquarters.push(activeStudents,inactiveStudents);
-    activeStudents.unshift("Activas");
-    inactiveStudents.unshift("Inactivas");
-    return studentsperHeadquarters;
-};
-
-console.log(statusOfTheStudentsPerHeadquarters(arraySede));
-
