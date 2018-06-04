@@ -30,7 +30,7 @@ if (getParameterByName('sede') === 'CDMX') {
 /******** ENCONTRANDO GENERACIONES**********/
 //OBTENER TOTAL DE GENERACIONES
 var totalGeneration= Object.keys(arraySede);
-    console.log(totalGeneration); 
+    console.log(totalGeneration);
 
 //CREAR LOS OPTIONS(generaciones encontradas por sede)
 var menuGeneration = document.getElementById('menu-generation');
@@ -43,14 +43,14 @@ for (var i=0; i<totalGeneration.length; i++){
     console.log(textOption);
 
     //CREAR ATRIBUTOS A ELEMENTOS-- al id y value se les va asignando el valor de I para poderlos manipular al seleccionar
-    option.setAttribute('id',i); 
+    option.setAttribute('id',i);
     option.setAttribute('class','option');
     option.setAttribute('value', i );
 
     //INDICAR POSICION DE HERENCIA
     option.appendChild(textOption);
     menuGeneration.appendChild(option);
-}; 
+};
 
 
 /***REQUERIMIENTO 1: FUNCIÓN QUE ARROJA EL TOTAL DE ESTUDIANTES POR SEDE*************/
@@ -73,6 +73,7 @@ var totalStudentsPerHeadQuarters = function(headQuarters){
 
 /******REQUERIMIENTO 2: SE CREA FUNCION GENERAL DEPENDIENDO LA GENERACION SELECCIONADA *********/
 function selectSede(value) {
+  x = value; // x es global
     var getGeneration = document.getElementById(value).textContent;
     console.log(getGeneration);
 
@@ -83,31 +84,52 @@ function selectSede(value) {
     var active = 0;
     var inactive = 0;
 
+    // GUARDANDO  ESTUDIANTES EN ARRAY SEGUN SU STATUS
+    var studentsperHeadquarters = [];
+    var activeStudents = [];
+    var inactiveStudents = [];
+
     // //ENTRAR A CADA GENERACION POR SEDE
     for (var i = 0; i < generations.length; i++) {
         if (generations[i] == getGeneration) {
             var students = arraySede[generations[i]].students;
-            var totalStudentsperGeneration = Object.keys(students).length;
-            console.log(totalStudentsperGeneration);
+            //var totalStudentsperGeneration = Object.keys(students);
+            console.log(students);
+          //  console.log(totalStudentsperGeneration);
 
             //ENTRAR A LAS ESTUDIANTES POR GENERACION
-            for (var j = 0; j < totalStudentsperGeneration; j++) {
+            for (var j = 0; j < students.length; j++) {
                 var studentsStatus = students[j].active;
+                console.log(studentsStatus);
 
                 //SI LA ESTUDIANTE ESTA ACTIVA O INACTIVA
                 if (studentsStatus == true) {
                     active = active + 1;
+                    activeStudents.push(students[j]);
+
+
                 } else if (studentsStatus == false) {
                     inactive = inactive + 1;
+                    inactiveStudents.push(students[j]);
                 }
             }
             console.log(active);
             console.log(inactive);
+            console.log(activeStudents);
+            console.log(inactiveStudents);
         }
     }
-    
+    return pruebaPintar(active, activeStudents, inactive, inactiveStudents);
 };
 
+// console.log(selectSede(value));
+function pruebaPintar (active, activeStudents, inactive, inactiveStudents){
+  console.log("Pintando HTML");
+  console.log(active);
+  console.log(inactive);
+  console.log(activeStudents);
+  console.log(inactiveStudents);
+}
 
 /*****REQUERIMIENTO N.3: CANTIDAD Y PORCENTAJE DE ESTUDIANTES EXITOSAS POR GENERACION****************/
 /*************************(superan la meta del 70% y siguen activas)***********************************/
@@ -177,4 +199,3 @@ var statusOfTheStudentsPerHeadquarters = function(headquarters){
 };
 
 console.log(statusOfTheStudentsPerHeadquarters(arraySede));
-
