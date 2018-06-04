@@ -63,11 +63,28 @@ var totalStudentsPerHeadQuarters = function(headQuarters){
         var totalStudentsperGeneration = Object.keys(students).length;
         //console.log(totalStudentsperGeneration);
 
+        
         sum += totalStudentsperGeneration;
+
+
     }
+    //CREANDO ELEMENTOS PARA PLASMAR EN HTML TOTAL DE ESTUDIANTES POR GENERACION
+    var containStudents= document.getElementById('contain-total-sede');
+    var totalStudents= document.getElementById('students-general');
+    var textTotalStudents= document.createElement('p');
+    var textTotal=document.createTextNode(sum);
+    
+    textTotalStudents.setAttribute('id','studentsPerLocation');
+    
+    textTotalStudents.appendChild(textTotal);
+    totalStudents.appendChild(textTotalStudents);
+    containStudents.appendChild(totalStudents);
 
     return sum;
+    
   };
+
+
 
   console.log(totalStudentsPerHeadQuarters(arraySede));
 
@@ -133,8 +150,8 @@ var totalStudentsPerHeadQuarters = function(headQuarters){
           });
       }
       studentsperHeadquarters.push(activeStudents,inactiveStudents);
-      activeStudents.unshift("Activas");
-      inactiveStudents.unshift("Inactivas");
+      activeStudents.unshift();
+      inactiveStudents.unshift();
       return studentsperHeadquarters;
   };
 
@@ -172,7 +189,6 @@ function selectGeneration(value) {
             //ENTRAR A LAS ESTUDIANTES POR GENERACION
             for (var j = 0; j < students.length; j++) {
                 var studentsStatus = students[j].active;
-                console.log(studentsStatus);
 
                 //SI LA ESTUDIANTE ESTA ACTIVA O INACTIVA
                 if (studentsStatus == true) {
@@ -189,16 +205,21 @@ function selectGeneration(value) {
             console.log(inactive);
             console.log(activeStudents);
             console.log(inactiveStudents);
-        }
+        }  
     }
+
     return pruebaPintar(active, activeStudents, inactive, inactiveStudents);
 };
 
 // console.log(selectSede(value));
 function pruebaPintar (active, activeStudents, inactive, inactiveStudents){
-  console.log("Pintando HTML");
-  console.log(active);
-  console.log(inactive);
-  console.log(activeStudents);
-  console.log(inactiveStudents);
-}
+ 
+  
+//   console.log("Pintando HTML");
+//   console.log(active);
+//   console.log(inactive);
+//   console.log(activeStudents);
+//   console.log(inactiveStudents);
+};
+
+
