@@ -157,11 +157,11 @@ console.log(arrayOfActiveStudentsPerHeadquarters(arraySede));
 
 
 
-/************FUNCIÓN QUE RETORNA UN ARRAY2D CON LAS ESTUDIANTES ACTIVAS E INACTIVAS DE CADA SEDE**********************/
-var arrayOfActiveStudentsPerHeadquarters = function(headquarters){
+/************FUNCIÓN QUE RETORNA UN ARRAY2D CON LAS ESTUDIANTES ACTIVAS E INACTIVAS POR SEDE**********************/
+var statusOfTheStudentsPerHeadquarters = function(headquarters){
     var generationsOfHeadquarters= Object.keys(headquarters);
     //  generationsOfHeadquarters = ["2017-1", "2017-2"]
-      var statusOfTheStudentsperGeneration = [];
+      var studentsperHeadquarters = [];
       var activeStudents = [];
       var inactiveStudents = [];
     for(var i in generationsOfHeadquarters){
@@ -175,8 +175,10 @@ var arrayOfActiveStudentsPerHeadquarters = function(headquarters){
           }
         });
     }
-    statusOfTheStudentsperGeneration.push(activeStudents,inactiveStudents);
-    return statusOfTheStudentsperGeneration;
+    studentsperHeadquarters.push(activeStudents,inactiveStudents);
+    activeStudents.unshift("Activas");
+    inactiveStudents.unshift("Inactivas");
+    return studentsperHeadquarters;
 };
 
-console.log(arrayOfActiveStudentsPerHeadquarters(arraySede));
+console.log(statusOfTheStudentsPerHeadquarters(arraySede));
