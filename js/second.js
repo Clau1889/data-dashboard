@@ -26,10 +26,11 @@ if (getParameterByName('sede') === 'CDMX') {
     var getNameLocation = document.getElementById('name-location').innerHTML = 'Santiago de Chile, Chile';
 };
 
+
 /******** ENCONTRANDO GENERACIONES**********/
 //OBTENER TOTAL DE GENERACIONES
 var totalGeneration= Object.keys(arraySede);
-    console.log(totalGeneration);
+    console.log(totalGeneration); 
 
 //CREAR LOS OPTIONS(generaciones encontradas por sede)
 var menuGeneration = document.getElementById('menu-generation');
@@ -39,18 +40,24 @@ for (var i=0; i<totalGeneration.length; i++){
     //CREAR ELEMENTOS DE SELECTION
     var option= document.createElement('option');
     var textOption= document.createTextNode(eachGeneration);
+    console.log(textOption);
 
-    //CREAR ATRIBUTOS A ELEMENTOS
-    option.setAttribute('id','option');
-    option.setAttribute('value', 'generation');
+    //CREAR ATRIBUTOS A ELEMENTOS-- al id y value se les va asignando el valor de I para poderlos manipular al seleccionar
+    option.setAttribute('id',i); 
+    option.setAttribute('class','option');
+    option.setAttribute('value', i );
 
     //INDICAR POSICION DE HERENCIA
     option.appendChild(textOption);
     menuGeneration.appendChild(option);
+}; 
 
-};
 
-/******FUNCIÓN QUE ARROJA EL TOTAL DE ESTUDIANTES POR SEDE*************/
+
+
+/***REQUERIMIENTO 1: FUNCIÓN QUE ARROJA EL TOTAL DE ESTUDIANTES POR SEDE*************/
+
+
 var totalStudentsPerHeadQuarters = function(headQuarters){
     var generationsOfHeadquarters= Object.keys(headQuarters);
     var sum = 0;
@@ -71,47 +78,45 @@ var totalStudentsPerHeadQuarters = function(headQuarters){
 
 
 
-/******CREANDO FUNCION QUE SACA ESTUDIANTES ACTIVAS E INACTIVAS*********/
 
-// var activeStudents = function (totalActiveStudents) {
-//     //ENTRAR A LAS LLAVES DE LAS GENERACIONES
-//     var generations = Object.keys(totalActiveStudents);
-//     console.log(generations);
-//
-//     //INICIALIZANDO CONTADORES PARA ESTUDIATNES ACTIVAS E INACTIVAS
-//     var active = 0;
-//     var inactive = 0;
-//
-//     //ENTRAR A CADA GENERACION POR SEDE
-//     for (var i = 0; i < generations.length; i++) {
-//         var students = totalActiveStudents[generations[i]].students;
-//         console.log(students);
-//         var totalStudentsperGeneration = Object.keys(students).length;
-//         console.log(totalStudentsperGeneration);
-//
-//         //ENTRAR A LAS ESTUDIANTES POR GENERACION
-//         for (var j = 0; j < totalStudentsperGeneration; j++) {
-//             var studentsStatus = students[j].active;
-//             console.log(studentsStatus);
-//
-//             //SI LA ESTUDIANTE ESTA ACTIVA
-//             if (studentsStatus == true) {
-//                 active = active + 1;
-//
-//             //SI LA ESTUDIANTE ESTA INACTIVA
-//             } else if (studentsStatus == false) {
-//                 inactive = inactive + 1;
-//             }
-//         }
-//         console.log(active);
-//         console.log(inactive);
-//         //CUANDO SUMA ACTIVAS O INACTIVAS DE UNA GENERACION- SE REINICIA EN "CERO" PARA CONTAR LA SIGUIENTE GENERACION
-//         active = 0;
-//         inactive = 0;
-//     }
-// };
-// console.log(activeStudents(arraySede));
 
+
+/******REQUERIMIENTO 2: SE CREA FUNCION GENERAL DEPENDIENDO LA GENERACION SELECCIONADA *********/
+function selectSede(value) {
+    var getGeneration = document.getElementById(value).textContent;
+    console.log(getGeneration);
+
+    //ENTRAR A LAS LLAVES DE LAS GENERACION SELECCIONADA
+    var generations = Object.keys(arraySede);
+
+    // //INICIALIZANDO CONTADORES PARA ESTUDIATNES ACTIVAS E INACTIVAS
+    var active = 0;
+    var inactive = 0;
+
+    // //ENTRAR A CADA GENERACION POR SEDE
+    for (var i = 0; i < generations.length; i++) {
+        if (generations[i] == getGeneration) {
+            var students = arraySede[generations[i]].students;
+            var totalStudentsperGeneration = Object.keys(students).length;
+            console.log(totalStudentsperGeneration);
+
+            //ENTRAR A LAS ESTUDIANTES POR GENERACION
+            for (var j = 0; j < totalStudentsperGeneration; j++) {
+                var studentsStatus = students[j].active;
+
+                //SI LA ESTUDIANTE ESTA ACTIVA O INACTIVA
+                if (studentsStatus == true) {
+                    active = active + 1;
+                } else if (studentsStatus == false) {
+                    inactive = inactive + 1;
+                }
+            }
+            console.log(active);
+            console.log(inactive);
+        }
+    }
+    
+};
 
 
 /*****REQUERIMIENTO N.3: CANTIDAD Y PORCENTAJE DE ESTUDIANTES EXITOSAS POR GENERACION****************/
@@ -182,3 +187,4 @@ var statusOfTheStudentsPerHeadquarters = function(headquarters){
 };
 
 console.log(statusOfTheStudentsPerHeadquarters(arraySede));
+
