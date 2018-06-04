@@ -38,6 +38,7 @@ for (var i=0; i<totalGeneration.length; i++){
     var eachGeneration= totalGeneration[i];
 
 
+
     //CREAR ELEMENTOS DE SELECTION
     var option= document.createElement('option');
     var textOption= document.createTextNode(eachGeneration);
@@ -50,28 +51,8 @@ for (var i=0; i<totalGeneration.length; i++){
     option.appendChild(textOption);
     menuGeneration.appendChild(option);
 
-<<<<<<< HEAD
-    };
 
-/*****************FUNCIÓN QUE ARROJA EL TOTAL DE ESTUDIANTES POR SEDE************************************/
-var totalStudentsPerHeadQuarters = function(headQuarters){
-    var generationsOfHeadquarters= Object.keys(headQuarters);
-    var sum = 0;
-    for(var i = 0; i < generationsOfHeadquarters.length; i++){
-        var students = headQuarters[generationsOfHeadquarters[i]].students;
-        //console.log(students);
-        var totalStudentsperGeneration = Object.keys(students).length;
-        //console.log(totalStudentsperGeneration);
-  
-        sum += totalStudentsperGeneration;
-    }
-  
-    return sum;
-  };
-  
-  console.log(totalStudentsPerHeadQuarters(arraySede));
-=======
-};
+
 
 
 
@@ -96,11 +77,118 @@ var objectToArray = function(object) {
   return array2d;
 };
 
+var cdmx = data.CDMX;
+console.log(cdmx);
+
+var cdmxGenerations = Object.keys(cdmx);
+console.log(cdmxGenerations);
+
+
+/***********************CONVIRTIENDO arraySede en ARRAY***********************/
+var newArraySede = objectToArray(arraySede);
+console.log(newArraySede);
+
+var arrayCdmx = objectToArray(cdmx);
+console.log(arrayCdmx);
+
+/*****************FUNCIÓN QUE ARROJA EL TOTAL DE ESTUDIANTES POR SEDE************************************/
+var totalStudentsPerHeadquarters = function(headquarters){
+    var generationsOfHeadquarters= Object.keys(headquarters);
+    console.log(generationsOfHeadquarters);
+    var sum = 0;
+    for(var i = 0; i < generationsOfHeadquarters.length; i++){
+        var students = headquarters[generationsOfHeadquarters[i]].students;
+        var totalStudentsperGeneration = Object.keys(students).length;
+        console.log(totalStudentsperGeneration);
+
+        sum += totalStudentsperGeneration;
+    }
+
+    return sum;
+};
+
+console.log(totalStudentsPerHeadquarters(arraySede));
+
+
+/*****************FUNCIÓN QUE ARROJA EL TOTAL DE ESTUDIANTES ACTIVAS POR SEDE************************************/
+var totalActiveStudentsPerHeadquarters = function(headquarters){
+    var generationsOfHeadquarters= Object.keys(headquarters);
+    console.log(generationsOfHeadquarters);//["2017-1", "2017-2"]
+    var sum = 0;
+    for(var i = 0; i < generationsOfHeadquarters.length; i++){
+        var students = headquarters[generationsOfHeadquarters[i]].students;
+        console.log(students);
+        for(var obj in students){
+          var activeStudents = students[obj].active;
+          console.log(activeStudents);
+        }
+
+      }
+  return students;
+};
+
+console.log(totalActiveStudentsPerHeadquarters(arraySede));
+
+
+// var generation
+// var arrayHeadquarters = objectToArray(arraySede);
+//     console.log(arrayHeadquarters.length);
+// for(var i = 1; i < arrayHeadquarters.length; i+2){
+//       var valueOfElementOfArrayHeadquarters = arrayHeadquarters[i];
+//     console.log(valueOfElementOfArrayHeadquarters);
+//     if(i > arrayHeadquarters.length){
+//       break;
+//     }
+//   }
+//     var valueOfElementOfArrayHeadquarters = arrayHeadquarters[i];
+//     console.log(valueOfElementOfArrayHeadquarters);
+// }
+
+
+
+
+
+
+
+
+
+/*****************FUNCIÓN QUE ARROJA EL TOTAL DE ESTUDIANTES ACTIVAS POR SEDE************************************/
+// var totalActiveStudentsPerHeadquarters = function(sede){
+//   var arrayOfTheObject = objectToArray(sede);
+//   var arrayStudentsperGeneration = studentsPerGeneration(arrayOfTheObject);
+//   return arrayStudentsperGeneration;
+// };
+//
+// console.log(arrayStudentsperGeneration);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /***********************************CONVIRTIENDO EL OBJETO DATA A ARRAY*********************************/
-var arrayData = objectToArray(data);
+//var arrayData = objectToArray(data);
 // console.log(data);
-var dataToArray = objectToArray(arrayData);
+//var dataToArray = objectToArray(arrayData);
 // console.log(dataToArray);
 
 
@@ -153,7 +241,7 @@ var dataToArray = objectToArray(arrayData);
 // var limaGenerations = Object.keys(lima);
 // var stgoDeChileGenerations = Object.keys(santiago);
 // console.log(aqpGenerations);
->>>>>>> 76f93190011da3e4b686729ddf9f721867ba46f7
+
 
 
 /*****************CREANDO FUNCION QUE SACA ESTUDIANTES ACTIVAS E INACTIVAS************************/
@@ -196,6 +284,12 @@ var activeStudents = function (totalActiveStudents) {
     }
 };
 console.log(activeStudents(arraySede));
+
+
+
+/************************** APARECER TABS HASTA QUE SE SELECCIONE GENERACION*************************************/
+
+
 
 /****************************CONVIRTIENDO LOS OBJETOS DE LAS SEDES EN ARRAYS*******************************/
 // var arrayArequipa = objectToArray(arequipa);
