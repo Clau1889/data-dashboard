@@ -73,41 +73,84 @@ var totalStudentsPerHeadQuarters = function(headQuarters){
 
 /******CREANDO FUNCION QUE SACA ESTUDIANTES ACTIVAS E INACTIVAS*********/
 
-var activeStudents = function (totalActiveStudents) {
-    //ENTRAR A LAS LLAVES DE LAS GENERACIONES
-    var generations = Object.keys(totalActiveStudents);
-    console.log(generations);
+// var activeStudents = function (totalActiveStudents) {
+//     //ENTRAR A LAS LLAVES DE LAS GENERACIONES
+//     var generations = Object.keys(totalActiveStudents);
+//     console.log(generations);
+//
+//     //INICIALIZANDO CONTADORES PARA ESTUDIATNES ACTIVAS E INACTIVAS
+//     var active = 0;
+//     var inactive = 0;
+//
+//     //ENTRAR A CADA GENERACION POR SEDE
+//     for (var i = 0; i < generations.length; i++) {
+//         var students = totalActiveStudents[generations[i]].students;
+//         console.log(students);
+//         var totalStudentsperGeneration = Object.keys(students).length;
+//         console.log(totalStudentsperGeneration);
+//
+//         //ENTRAR A LAS ESTUDIANTES POR GENERACION
+//         for (var j = 0; j < totalStudentsperGeneration; j++) {
+//             var studentsStatus = students[j].active;
+//             console.log(studentsStatus);
+//
+//             //SI LA ESTUDIANTE ESTA ACTIVA
+//             if (studentsStatus == true) {
+//                 active = active + 1;
+//
+//             //SI LA ESTUDIANTE ESTA INACTIVA
+//             } else if (studentsStatus == false) {
+//                 inactive = inactive + 1;
+//             }
+//         }
+//         console.log(active);
+//         console.log(inactive);
+//         //CUANDO SUMA ACTIVAS O INACTIVAS DE UNA GENERACION- SE REINICIA EN "CERO" PARA CONTAR LA SIGUIENTE GENERACION
+//         active = 0;
+//         inactive = 0;
+//     }
+// };
+// console.log(activeStudents(arraySede));
 
-    //INICIALIZANDO CONTADORES PARA ESTUDIATNES ACTIVAS E INACTIVAS
-    var active = 0;
-    var inactive = 0;
 
-    //ENTRAR A CADA GENERACION POR SEDE
-    for (var i = 0; i < generations.length; i++) {
-        var students = totalActiveStudents[generations[i]].students;
-        console.log(students);
-        var totalStudentsperGeneration = Object.keys(students).length;
-        console.log(totalStudentsperGeneration);
 
-        //ENTRAR A LAS ESTUDIANTES POR GENERACION
-        for (var j = 0; j < totalStudentsperGeneration; j++) {
-            var studentsStatus = students[j].active;
-            console.log(studentsStatus);
+/*****REQUERIMIENTO N.3: CANTIDAD Y PORCENTAJE DE ESTUDIANTES EXITOSAS POR GENERACION****************/
+/*************************(superan la meta del 70% y siguen activas)***********************************/
 
-            //SI LA ESTUDIANTE ESTA ACTIVA
-            if (studentsStatus == true) {
-                active = active + 1;
-
-            //SI LA ESTUDIANTE ESTA INACTIVA
-            } else if (studentsStatus == false) {
-                inactive = inactive + 1;
-            }
-        }
-        console.log(active);
-        console.log(inactive);
-        //CUANDO SUMA ACTIVAS O INACTIVAS DE UNA GENERACION- SE REINICIA EN "CERO" PARA CONTAR LA SIGUIENTE GENERACION
-        active = 0;
-        inactive = 0;
+//FUNCION QUE RETORNA UN ARRAY2D CON LAS ESTUDIANTES POR GENERACION DE CADA SEDE
+var arrayOfStudentsPerHeadquarters = function(headquarters){
+    var generationsOfHeadquarters= Object.keys(headquarters);
+    //  generationsOfHeadquarters = ["2017-1", "2017-2"]
+      var studentsperGeneration = [];
+    for(var i in generationsOfHeadquarters){
+        var students = headquarters[generationsOfHeadquarters[i]].students;
+        studentsperGeneration.push(students);
     }
+
+    return studentsperGeneration;
 };
-console.log(activeStudents(arraySede));
+
+console.log(arrayOfStudentsPerHeadquarters(arraySede));
+
+///////////////////////////////////////////////////////////////////
+
+var arrayOfActiveStudentsPerHeadquarters = function(headquarters){
+    var generationsOfHeadquarters= Object.keys(headquarters);
+    //  generationsOfHeadquarters = ["2017-1", "2017-2"]
+      var studentsperGeneration = [];
+      var activeStudents = [];
+      var inactiveStudents = [];
+    for(var i in generationsOfHeadquarters){
+        var students = headquarters[generationsOfHeadquarters[i]].students;
+        students.forEach(function(obj,index){
+          var statusOfTheStudent = obj.active;
+          if(statusOfTheStudent == true){
+            activeStudents.push(obj);
+          }
+        });
+    }
+
+    return activeStudents;
+};
+
+console.log(arrayOfActiveStudentsPerHeadquarters(arraySede));
