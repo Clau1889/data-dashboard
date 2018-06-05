@@ -199,7 +199,7 @@ function selectGeneration(value) {
             /************************TRABAJANDO CON RATINGS*************************/
             /******REQUERIMIENTO 4: OBTENIENDO EL % DE ESTUDIANTES SATISFECHA POR GENERACION *********/
 
-            //OBTENIENDO LA SUMA DE TODOS LOS PORCENTAJES DE LOS SPRINTS POR GENERACION
+            //Obteniendo la suma de todos los porcentajes de los sprints por generación
             var sum = 0;
             for(element of ratings){
                 //console.log(element);
@@ -219,7 +219,24 @@ function selectGeneration(value) {
             var percentageOfStudentsSatisfiedPerGeneration = sum/ratings.length + "%";
             console.log(percentageOfStudentsSatisfiedPerGeneration);
 
-            /******REQUERIMIENTO 5: OBTENIENDO EL % DE ESTUDIANTES SATISFECHA POR GENERACION *********/
+            /******REQUERIMIENTO 5: PUNTUACIÓN PROMEDIO DE L@S PROFESORES POR GENERACION*********/
+
+            var sumOfTheAverage = 0;
+            for(element of ratings){
+                console.log(element);
+                var averageOfTeachersPerSprint = element.teacher;
+                console.log(averageOfTeachersPerSprint);
+                // var averageOfTeachersPerGeneration += cumple + supera;
+                sumOfTheAverage += averageOfTeachersPerSprint;
+                // //console.log(sumCumpleSupera);
+                console.log(sumOfTheAverage);
+            };
+
+            //OBTENIENDO EL PROMEDIO DE PROFESORES POR GENERACION
+            var averageOfTeachersPerGeneration = sumOfTheAverage/ratings.length;
+
+            console.log(averageOfTeachersPerGeneration.toFixed(2));//
+
 
 
         };//cierra if
@@ -236,20 +253,3 @@ function pruebaPintar (active, activeStudents, inactive, inactiveStudents){
   console.log(activeStudents);
   console.log(inactiveStudents);
 };
-
-
-
-
-
-//FUNCION QUE ACCEDE A "RATINGS" DEPENDIENDO DE LA GENERACION seleccionada
-
-// function getRatings(value) {
-//
-//     var getGeneration = document.getElementById(value).textContent;
-//     console.log(getGeneration);
-//
-//     //ENTRAR A LAS LLAVES DE LAS GENERACION SELECCIONADA
-//     var generations = Object.keys(arraySede);
-//     console.log(generations);
-//
-// };
