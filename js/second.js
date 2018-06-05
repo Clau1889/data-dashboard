@@ -319,6 +319,16 @@ function selectGeneration(value) {
             var averageOfJediPerGeneration = sumOfTheAverage2/ratings.length;
             console.log(averageOfJediPerGeneration.toFixed(2));
 
+            var boxJedis = document.getElementById('box-jedis');
+            var gradesJedis = document.getElementById('grades-jedis');
+            var totalGradesJedis= document.getElementById('text-grades-jedis');
+            var totalGrades= document.createElement('p');
+            var textJedis = document.createTextNode(averageOfJediPerGeneration);
+            
+            totalGrades.appendChild(textJedis);
+            totalGradesJedis.appendChild(totalGrades);
+            gradesJedis.appendChild(totalGradesJedis);
+            boxJedis.appendChild(gradesJedis);
 
         };//cierra if
     };//cierra el for en i
