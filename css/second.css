@@ -118,6 +118,7 @@ li.tab{
 }
 
 
+
 /******************RESULTADOS GENERALES POR SEDE************************/
 section#contain-total-sede{
     /* display: inline-block; */
@@ -197,15 +198,32 @@ section#contain-total-sede{
     top:0;
     width: auto;
     box-shadow: 2px 2px 5px rgba(23, 32, 42, .2);
+    box-sizing: border-box;
+    padding-left: 3rem;
 }
 
 .box{
     display: inline-block;
+    box-sizing: border-box;
     height: auto;
-    margin-top:1rem;
     padding: 0.5rem;
     text-align: center;
+    position: relative;
+    top: -1rem;
     width:10rem;
+}
+
+#box-name-students {
+  display: inline-block;
+  height: auto;
+  margin-top:1rem;
+  padding: 0.5rem;
+  text-align: center;
+  width:16rem;
+  font-family: 'Quicksand', sans-serif;
+  text-align: center;
+  color: #34495E;
+  margin: .5rem;
 }
 
 #box-coaches{
