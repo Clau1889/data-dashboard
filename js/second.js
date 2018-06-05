@@ -283,10 +283,22 @@ function selectGeneration(value) {
 
                     };//cierra if
                 };//cierra for of sprints
-                
             };//cierra for of activeStudents
+            var boxStudents = document.getElementById('box-students');
+                var boxSuccesfulStudents= document.getElementById('box-succesful-students');
+                var succesfulStudents = document.getElementById('succesful-students');
+                var totalNameStudents = document.createElement('p');
+                var textNames = document.createTextNode(arrOfSuccessfulStudentsPerGeneration.length);
+
+                // totalActive.appendChild(textActive.name);
+                totalNameStudents.appendChild(textNames );
+                succesfulStudents.appendChild(totalNameStudents);
+                boxSuccesfulStudents.appendChild(succesfulStudents);
+                boxStudents.appendChild(boxSuccesfulStudents);
+                
             var numberOfSuccessfulStudentsPerGeneration = arrOfSuccessfulStudentsPerGeneration.length;
             console.log(numberOfSuccessfulStudentsPerGeneration);
+
             var hundredPercent = activeStudents.length;
             var percentageOfSuccessfulStudentsPerGeneration = numberOfSuccessfulStudentsPerGeneration;
             var boxStudents = document.getElementById('box-students');
@@ -300,10 +312,6 @@ function selectGeneration(value) {
             nameStudents.appendChild(totalNameStudents);
             boxNameStudents.appendChild(nameStudents);
             boxStudents.appendChild(boxNameStudents);
-            console.log(active);
-            console.log(inactive);
-            console.log(activeStudents);
-            console.log(inactiveStudents);
 
             /************************TRABAJANDO CON RATINGS*************************/
             /******REQUERIMIENTO 4: OBTENIENDO EL % DE ESTUDIANTES SATISFECHA POR GENERACION *********/
