@@ -32,13 +32,13 @@ main{
 section#contain-loc-gen{
     height: auto;
     margin-left: 2rem;
-    width: auto;
+    width: 35%;
     
 }
 
 /**TITULO-SEDE**/
 h1#name-location{
-    font-family: 'Handlee', cursive;/*no me esta aceptando el valor*/
+    font-family: 'Handlee', cursive;
     font-size: 2rem;
     font-weight: bold;
     width: auto;
@@ -119,6 +119,36 @@ li.tab > a:hover{
     font-weight: bold;
 }
 
+/******************RESULTADOS GENERALES POR SEDE************************/
+section#contain-total-sede{
+    height: 7rem;
+    margin-left: 2rem;
+    position: relative;
+    right: 0;
+    top: 2rem;
+    width: 50%;
+    /* outline: 1px solid blue; */
+}
 
+#students-general{
+    background-color:  rgba(204, 199, 199, 0.4);
+    /* border: 1px inset rgba(128, 128, 128, 0.856); */
+    height: auto;
+    padding: 0.2rem;
+    text-align: center;
+    width: 8rem;
+}
+
+#subtitle-total-students{
+    font-family: 'Handlee', cursive;
+    text-align: center;
+}
+
+#studentsPerLocation{
+    color: blue;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
 
 
