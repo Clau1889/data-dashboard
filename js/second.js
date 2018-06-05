@@ -241,6 +241,17 @@ function selectGeneration(value) {
             console.log(averageOfTeachersPerGeneration.toFixed(2));
 
 
+            /******REQUERIMIENTO 6: PUNTUACIÓN PROMEDIO DE L@S JEDIE MASTER POR GENERACION*********/
+
+            var sumOfTheAverage2 = 0;
+            for(element of ratings){
+                var averageOfJediPerSprint = element.jedi;
+                sumOfTheAverage2 += averageOfJediPerSprint;
+            };
+
+            //OBTENIENDO EL PROMEDIO DE JEDIE POR GENERACION
+            var averageOfJediPerGeneration = sumOfTheAverage2/ratings.length;
+            console.log(averageOfJediPerGeneration.toFixed(2));
 
         };//cierra if
     };//cierra el for en i
