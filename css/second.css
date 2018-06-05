@@ -110,9 +110,9 @@ li.tab{
 
 /*Opciones*/
 .option{
-    background-color: rgba(250, 240, 169, 0.849);
-    color: rgba(194, 32, 32, 0.924);
-    font-family: 'Roboto', sans-serif;
+    background-color: #E0D7D5;
+    color: #424949;
+    font-family: 'Quicksand', sans-serif;
     font-size: 1rem;
     font-weight: bold;
 }
@@ -127,7 +127,7 @@ section#contain-total-sede{
     left: 24rem;
     right: 0;
     top: 4rem;
-    width: 100%;
+    width: 60%;
 }
 
 #students-general{
@@ -196,6 +196,7 @@ section#contain-total-sede{
     margin-top: -0.1rem;
     top:0;
     width: auto;
+    box-shadow: 2px 2px 5px rgba(23, 32, 42, .2);
 }
 
 .box{
