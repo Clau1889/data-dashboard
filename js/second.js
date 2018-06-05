@@ -245,17 +245,28 @@ function selectGeneration(value) {
                     inactiveStudents.push(students[j]);
                 };
             };//cierra for en j
-            // var boxStudents = document.getElementById('box-students');
-            //     var boxNameStudents = document.getElementById('box-name-students');
-            //     var nameStudents = document.getElementById('name-students');
-            //     var totalNames = document.createElement('p');
-            //     var textNamesStudents = document.createTextNode(activeStudents.name);
 
-            //     // totalActive.appendChild(textActive.name);
-            //     totalNames.appendChild(textNamesStudents);
-            //     nameStudents.appendChild(totalNames);
-            //     boxNameStudents.appendChild(nameStudents);
-            //     boxStudents.appendChild(boxNameStudents);
+
+            //HACIENDO UN ARRAY CON LOS NOMBRES DE LAS ESTUDIANTES ACTIVAS
+            var arrNamesOfActiveStudents = [];
+            for (obj of activeStudents){
+                var nameOfActiveStudent = obj.name;
+                arrNamesOfActiveStudents.push(nameOfActiveStudent);
+            }
+            
+            var boxStudents = document.getElementById('box-students');
+            var boxNameStudents = document.getElementById('box-name-students');
+            var nameStudents = document.getElementById('name-students');
+            var totalNames = document.createElement('p');
+            var textNamesStudents = document.createTextNode(arrNamesOfActiveStudents);
+
+            // totalActive.appendChild(textActive.name);
+            totalNames.appendChild(textNamesStudents);
+            nameStudents.appendChild(totalNames);
+            boxNameStudents.appendChild(nameStudents);
+            boxStudents.appendChild(boxNameStudents);
+            console.log(arrNamesOfActiveStudents);
+
 
             /******REQUERIMIENTO 3: CANTIDAD Y PORCENTAJE DE ESTUDIANTES EXITOSAS POR GENERACION *********/
             var arrOfSuccessfulStudentsPerGeneration = [];
