@@ -126,13 +126,13 @@ var arrayOfActiveStudentsPerHeadquarters = function (headquarters) {
     var totalActiveStudents = document.getElementById('students-actives');
     var textTotalActiveStudents = document.createElement('p');
     var textTotalActive = document.createTextNode(activeStudents.length);
-            
+
     textTotalActiveStudents.setAttribute('id', 'studentsActivePerLocation');
     textTotalActiveStudents.setAttribute('class', 'studentsPerSede');
-            
+
     textTotalActiveStudents.appendChild(textTotalActive);
     totalActiveStudents.appendChild(textTotalActiveStudents);
-    containStudents.appendChild(totalActiveStudents); 
+    containStudents.appendChild(totalActiveStudents);
 
     return activeStudents;
 };
@@ -160,13 +160,13 @@ var arrayOfActiveStudentsPerHeadquarters = function (headquarters) {
     var totalInactiveStudents = document.getElementById('students-inactives');
     var textTotalInactiveStudents = document.createElement('p');
     var textTotalInactive = document.createTextNode(inactiveStudents.length);
-            
+
     textTotalInactiveStudents.setAttribute('id', 'studentsInactivePerLocation');
     textTotalInactiveStudents.setAttribute('class', 'studentsPerSede');
-            
+
     textTotalInactiveStudents.appendChild(textTotalInactive);
     totalInactiveStudents.appendChild(textTotalInactiveStudents);
-    containStudents.appendChild(totalInactiveStudents); 
+    containStudents.appendChild(totalInactiveStudents);
 
     return inactiveStudents;
 };
@@ -187,12 +187,12 @@ var statusOfTheStudentsPerHeadquarters = function (headquarters) {
             console.log(statusOfTheStudent);
 
             if (statusOfTheStudent == true) {
-                activeStudents.push(obj);  
+                activeStudents.push(obj);
             } else {
                 inactiveStudents.push(obj);
             }
         });
-       
+
     }
     studentsperHeadquarters.push(activeStudents, inactiveStudents);
     activeStudents.unshift();
@@ -207,7 +207,7 @@ var containStudents = document.getElementById('contain-total-sede');
 /******REQUERIMIENTO 2: SE CREA FUNCION GENERAL DEPENDIENDO LA GENERACION SELECCIONADA *********/
 function selectGeneration(value) {
     var list= document.getElementById('contain-menu').style.display= "block";
-    
+
     var getGeneration = document.getElementById(value).textContent;
     console.log(getGeneration);
 
@@ -247,6 +247,36 @@ function selectGeneration(value) {
                     inactiveStudents.push(students[j]);
                 };
             };//cierra for en j
+
+
+            /******REQUERIMIENTO 3: CANTIDAD Y PORCENTAJE DE ESTUDIANTES EXITOSAS POR GENERACION *********/
+
+            for (element of activeStudents) {
+                console.log(element);
+                var sprints = element.sprints;
+                console.log(sprints);
+
+
+            var sumScoreOfAllSprints = 0;
+            for( obj of sprints){
+                var score = obj.score;
+                console.log(score);
+                var tech = score.tech;
+                console.log(tech);
+                var hse = score.hse;
+                console.log(hse);
+                var scorePerSprint = tech + hse;
+                sumScoreOfAllSprints += scorePerSprint;
+                console.log(sumScoreOfAllSprints);
+                var arrOfSuccessfulStudentsPerGeneration = [];
+                if(sumScoreOfAllSprints > 8400){
+                    arrOfSuccessfulStudentsPerGeneration.push(element);
+                    console.log(arrOfSuccessfulStudentsPerGeneration);
+                }
+            }
+
+            };
+
             console.log(active);
             console.log(inactive);
             console.log(activeStudents);
@@ -258,13 +288,13 @@ function selectGeneration(value) {
             //Obteniendo la suma de todos los porcentajes de los sprints por generación
             var sum = 0;
             for (element of ratings) {
-                //console.log(element);
+                console.log(element);
                 var students = element.student;
-                //console.log(students);
+                console.log(students);
                 var cumple = students["cumple"];
-                //console.log(cumple);
+                console.log(cumple);
                 var supera = students.supera;
-                //console.log(supera);
+                console.log(supera);
                 var sumCumpleSupera = cumple + supera;
                 sum += sumCumpleSupera;
                 console.log(sum);
