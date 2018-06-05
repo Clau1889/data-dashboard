@@ -246,6 +246,13 @@ function selectGeneration(value) {
                 };
             };//cierra for en j
 
+            //HACIENDO UN ARRAY CON LOS NOMBRES DE LAS ESTUDIANTES ACTIVAS
+            var arrNamesOfActiveStudents = [];
+            for (obj of activeStudents){
+                var nameOfActiveStudent = obj.name;
+                arrNamesOfActiveStudents.push(nameOfActiveStudent);
+            }
+            console.log(arrNamesOfActiveStudents);
 
             /******REQUERIMIENTO 3: CANTIDAD Y PORCENTAJE DE ESTUDIANTES EXITOSAS POR GENERACION *********/
             var arrOfSuccessfulStudentsPerGeneration = [];
