@@ -24,22 +24,37 @@
         </section>
         <section id="contain-total-sede">
             <div id="students-general" class="students-location">
-                <h4 id="subtitle-total-students" class="text">TOTAL DE ESTUDIANTES</h4>
+                <h4 id="subtitle-total-students" class="text">TOTAL STUDENTS</h4>
             </div>
             <div id="students-actives" class="students-location">
-                <h4 id="students-actives-general" class="text">TOTAL DE ACTIVAS</h4>
+                <h4 id="students-actives-general" class="text">TOTAL ACTIVES</h4>
             </div>
             <div id="students-inactives" class="students-location">
-                <h4 id="students-inactives-general" class="text">TOTAL DE INACTIVAS</h4>
+                <h4 id="students-inactives-general" class="text">TOTAL INACTIVES</h4>
             </div>
         </section>
 
         <!-- Creando 5 pestañas fijas dónde se mostrará información solicitada -->
         <section id="contain-menu" onchange="selectGeneration(this.value)" >
             <ul id="list">
-                <li id="tab1" class="tab"><a href=''>Students</a></li>
-                <li id="tab4" class="tab"><a href=''>Coaches</a></li>
-                <li id="tab5" class="tab"><a href=''>Jedi Masters</a></li>
+                <li id="tab1" class="tab" target="_parent">Students</li>
+                    <div id="box-students" class="main-box">
+                        <div id="satisfied-students" class="box">
+                            <h3 id="text-satisfied-students" class="text">SATISFIED STUDENTS</h3>
+                        </div>
+                    </div>
+                <li id="tab2" class="tab" target="_parent">Coaches</li>
+                <div id="box-coaches" class="main-box" >
+                    <div id="grades-coaches" class="box">
+                        <h3 id="text-grades-coaches" class="text">Total Score</h3>
+                    </div>
+                </div>
+                <li id="tab3" class="tab" target="_parent">Jedi Masters</li>
+                <div id="box-jedis" class="main-box">
+                    <div id="grades-jedis" class="box">
+                        <h3 id="text-grades-jedis" class="text">Total Score</h3>
+                    </div>
+                </div>
             </ul>
         </section>
 

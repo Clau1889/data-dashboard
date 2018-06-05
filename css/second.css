@@ -70,43 +70,32 @@ select#menu-generation{
 /**PESTANAS/TABS**/
 section#contain-menu{
     height: auto;
-    margin-left: 0;
-    width:100%;
+    width: 90%;
+
 }
 
 section > ul{
+    display:inline-block;
     height: auto;
-    margin-left: -0.3rem;
-    margin-top: 5rem;
+    margin-top: 3rem;
+    position: relative;
     width: 95%;
 }
 
 li.tab{
     background-color: rgba(248, 220, 6, 0.486);
-    border: 1px solid #c6c6c6;
     border-radius: 5%;
+    color: #000000;
     font-family: 'Roboto', sans-serif;
+    font-weight: bold;
     font-size: 1rem;
     display: inline-block;
     height: auto;
     list-style: none;
     margin-left:-0.2rem;
+    margin-top: 2rem;
     padding: 0.5rem;
     width: auto;
-}
-
-li.tab:hover{
-    background-color: #e4e0e0;
-}
-
-li.tab > a{
-    text-decoration: none;
-    color: #000000;
-    font-weight: bold;
-}
-
-li.tab > a:hover{
-    color: rgba(190, 80, 80, 0.877);
 }
 
 #contain-menu{
@@ -136,7 +125,7 @@ section#contain-total-sede{
 }
 
 #students-general{
-    background-color: rgba(128, 128, 128, 0.15);
+    background-color: rgba(128, 128, 128, 0.05);
     float: left;
     height: 8rem;
     margin: 0;
@@ -158,7 +147,7 @@ section#contain-total-sede{
 }
 
 #students-actives{
-    background-color: rgba(252, 207, 9, 0.25);
+    background-color: rgba(128, 128, 128, 0.05);
     height: 8rem;
     margin-left: 11rem;
     margin-top: 0;
@@ -168,7 +157,7 @@ section#contain-total-sede{
 }
 
 #students-inactives{
-    background-color: rgba(128, 128, 128, 0.15);
+    background-color: rgba(128, 128, 128, 0.05);
     float: left;
     height: 8rem;
     margin-left: 21.5rem;
@@ -177,6 +166,59 @@ section#contain-total-sede{
     text-align: center;
     width:8rem; 
 }
+
+/**********************RESULTADOS POR GENERACION****************/
+.main-box{
+    background-color:rgba(248, 220, 6, 0.486);
+    height: auto;
+    margin-left: -0.2rem;
+    margin-top: -1rem;
+    top:0;
+    width: auto;        
+}
+
+.box{
+    height: auto;
+    margin-top:1rem;
+    padding: 0.5rem;
+    text-align: center;
+    width:10rem; 
+}
+
+#box-coaches{
+    height: auto;
+    margin-top:-0.1rem;
+    padding: 0.5rem;
+    text-align: center;
+    width:20rem; 
+}
+
+#grades-coaches{
+    height: auto;
+    margin-top:1rem;
+    margin-left: 2rem;
+    padding: 0.5rem;
+    text-align: center;
+    width:10rem;  
+}
+
+#box-jedis{
+    height: auto;
+    margin-top:-0.05rem;
+    padding: 0.5rem;
+    text-align: center;
+    width:20rem; 
+}
+
+#grades-jedis{
+    height: auto;
+    margin-top:1rem;
+    margin-left: 2rem;
+    padding: 0.5rem;
+    text-align: center;
+    width:10rem;  
+}
+
 
 
 
