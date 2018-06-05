@@ -207,7 +207,7 @@ function selectGeneration(value) {
             /************************TRABAJANDO CON RATINGS*************************/
             /******REQUERIMIENTO 4: OBTENIENDO EL % DE ESTUDIANTES SATISFECHA POR GENERACION *********/
 
-            //OBTENIENDO LA SUMA DE TODOS LOS PORCENTAJES DE LOS SPRINTS POR GENERACION
+            //Obteniendo la suma de todos los porcentajes de los sprints por generación
             var sum = 0;
             for (element of ratings) {
                 //console.log(element);
@@ -220,11 +220,39 @@ function selectGeneration(value) {
                 var sumCumpleSupera = cumple + supera;
                 sum += sumCumpleSupera;
                 console.log(sum);
-            }
+            };
 
             //OBTENIENDO EL PORCENTAJE TOTAL DE ESTUDIANTES SATISFECHAS POR GENERACIONES
             var percentageOfStudentsSatisfiedPerGeneration = sum / ratings.length + "%";
             console.log(percentageOfStudentsSatisfiedPerGeneration);
-        }
-    }
+
+
+
+            /******REQUERIMIENTO 5: PUNTUACIÓN PROMEDIO DE L@S PROFESORES POR GENERACION*********/
+
+            var sumOfTheAverage = 0;
+            for(element of ratings){
+                var averageOfTeachersPerSprint = element.teacher;
+                sumOfTheAverage += averageOfTeachersPerSprint;
+            };
+
+            //OBTENIENDO EL PROMEDIO DE PROFESORES POR GENERACION
+            var averageOfTeachersPerGeneration = sumOfTheAverage/ratings.length;
+            console.log(averageOfTeachersPerGeneration.toFixed(2));
+
+
+
+        };//cierra if
+    };//cierra el for en i
+
+    return pruebaPintar(active, activeStudents, inactive, inactiveStudents);
+};
+
+// console.log(selectSede(value));
+function pruebaPintar (active, activeStudents, inactive, inactiveStudents){
+  console.log("Pintando HTML");
+  console.log(active);
+  console.log(inactive);
+  console.log(activeStudents);
+  console.log(inactiveStudents);
 };
