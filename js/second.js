@@ -216,8 +216,10 @@ function selectGeneration(value) {
             };
 
             //OBTENIENDO EL PORCENTAJE TOTAL DE ESTUDIANTES SATISFECHAS POR GENERACIONES
-            var percentageOfStudentsSatisfiedPerGeneration = sum/3 + "%";
+            var percentageOfStudentsSatisfiedPerGeneration = sum/ratings.length + "%";
             console.log(percentageOfStudentsSatisfiedPerGeneration);
+
+            /******REQUERIMIENTO 5: OBTENIENDO EL % DE ESTUDIANTES SATISFECHA POR GENERACION *********/
 
 
         };//cierra if
