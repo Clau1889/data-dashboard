@@ -141,12 +141,13 @@ section#contain-total-sede{
     width:9rem;
     border-radius: 5rem;
     box-shadow: 2px 2px 5px rgba(23, 32, 42, .2);
+
 }
 
 .text{
     font-family: 'Quicksand', sans-serif;
     text-align: center;
-    color: #424949;
+    color: #34495E;
     margin: .5rem;
 }
 
