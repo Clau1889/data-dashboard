@@ -219,23 +219,18 @@ function selectGeneration(value) {
             var percentageOfStudentsSatisfiedPerGeneration = sum/ratings.length + "%";
             console.log(percentageOfStudentsSatisfiedPerGeneration);
 
+
             /******REQUERIMIENTO 5: PUNTUACIÓN PROMEDIO DE L@S PROFESORES POR GENERACION*********/
 
             var sumOfTheAverage = 0;
             for(element of ratings){
-                console.log(element);
                 var averageOfTeachersPerSprint = element.teacher;
-                console.log(averageOfTeachersPerSprint);
-                // var averageOfTeachersPerGeneration += cumple + supera;
                 sumOfTheAverage += averageOfTeachersPerSprint;
-                // //console.log(sumCumpleSupera);
-                console.log(sumOfTheAverage);
             };
 
             //OBTENIENDO EL PROMEDIO DE PROFESORES POR GENERACION
             var averageOfTeachersPerGeneration = sumOfTheAverage/ratings.length;
-
-            console.log(averageOfTeachersPerGeneration.toFixed(2));//
+            console.log(averageOfTeachersPerGeneration.toFixed(2));
 
 
 
