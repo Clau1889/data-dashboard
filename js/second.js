@@ -206,7 +206,8 @@ var containStudents = document.getElementById('contain-total-sede');
 
 /******REQUERIMIENTO 2: SE CREA FUNCION GENERAL DEPENDIENDO LA GENERACION SELECCIONADA *********/
 function selectGeneration(value) {
-
+    var list= document.getElementById('contain-menu').style.display= "block";
+    
     var getGeneration = document.getElementById(value).textContent;
     console.log(getGeneration);
 
