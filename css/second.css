@@ -185,5 +185,40 @@ section#contain-total-sede{
     width:10rem; 
 }
 
+#box-coaches{
+    height: auto;
+    margin-top:-0.1rem;
+    padding: 0.5rem;
+    text-align: center;
+    width:20rem; 
+}
+
+#grades-coaches{
+    height: auto;
+    margin-top:1rem;
+    margin-left: 2rem;
+    padding: 0.5rem;
+    text-align: center;
+    width:10rem;  
+}
+
+#box-jedis{
+    height: auto;
+    margin-top:-0.05rem;
+    padding: 0.5rem;
+    text-align: center;
+    width:20rem; 
+}
+
+#grades-jedis{
+    height: auto;
+    margin-top:1rem;
+    margin-left: 2rem;
+    padding: 0.5rem;
+    text-align: center;
+    width:10rem;  
+}
+
+
 
 

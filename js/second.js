@@ -271,7 +271,6 @@ function selectGeneration(value) {
             //OBTENIENDO EL PORCENTAJE TOTAL DE ESTUDIANTES SATISFECHAS POR GENERACIONES
             var percentageOfStudentsSatisfiedPerGeneration = sum / ratings.length + "%";
            
-
             var boxStudents = document.getElementById('box-students');
             var satisficedStudents = document.getElementById('satisfied-students');
             var studentsSatisfied= document.getElementById('text-satisfied-students');
@@ -323,7 +322,7 @@ function selectGeneration(value) {
             var gradesJedis = document.getElementById('grades-jedis');
             var totalGradesJedis= document.getElementById('text-grades-jedis');
             var totalGrades= document.createElement('p');
-            var textJedis = document.createTextNode(averageOfJediPerGeneration);
+            var textJedis = document.createTextNode(averageOfJediPerGeneration.toFixed(2));
             
             totalGrades.appendChild(textJedis);
             totalGradesJedis.appendChild(totalGrades);
