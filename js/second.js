@@ -228,8 +228,6 @@ function selectGeneration(value) {
         if (generations[i] == getGeneration) {
             var students = arraySede[generations[i]].students;
             var ratings = arraySede[generations[i]].ratings;
-            console.log(ratings);
-            console.log(students);
 
 
             //ENTRAR A LAS ESTUDIANTES POR GENERACION
@@ -272,9 +270,7 @@ function selectGeneration(value) {
 
             //OBTENIENDO EL PORCENTAJE TOTAL DE ESTUDIANTES SATISFECHAS POR GENERACIONES
             var percentageOfStudentsSatisfiedPerGeneration = sum / ratings.length + "%";
-            var mathValue= Math.round(percentageOfStudentsSatisfiedPerGeneration);
-            console.log(mathValue);
-            var list= document.getElementById('tab1').disable= "true";
+           
 
             var boxStudents = document.getElementById('box-students');
             var satisficedStudents = document.getElementById('satisfied-students');
@@ -300,7 +296,16 @@ function selectGeneration(value) {
             var averageOfTeachersPerGeneration = sumOfTheAverage/ratings.length;
             console.log(averageOfTeachersPerGeneration.toFixed(2));
 
-
+            var boxCoaches = document.getElementById('box-coaches');
+            var gradesCoaches = document.getElementById('grades-coaches');
+            var textGradesCoaches= document.getElementById('text-grades-coaches');
+            var total = document.createElement('p');
+            var textGrades = document.createTextNode(averageOfTeachersPerGeneration.toFixed(2));
+            
+            total.appendChild(textGrades);
+            textGradesCoaches.appendChild(total);
+            gradesCoaches.appendChild(textGradesCoaches);
+            boxCoaches.appendChild(gradesCoaches);
 
             /******REQUERIMIENTO 6: PUNTUACIÓN PROMEDIO DE L@S JEDIE MASTER POR GENERACION*********/
 
@@ -313,6 +318,7 @@ function selectGeneration(value) {
             //OBTENIENDO EL PROMEDIO DE JEDIE POR GENERACION
             var averageOfJediPerGeneration = sumOfTheAverage2/ratings.length;
             console.log(averageOfJediPerGeneration.toFixed(2));
+
 
         };//cierra if
     };//cierra el for en i
