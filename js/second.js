@@ -245,6 +245,17 @@ function selectGeneration(value) {
                     inactiveStudents.push(students[j]);
                 };
             };//cierra for en j
+            // var boxStudents = document.getElementById('box-students');
+            //     var boxNameStudents = document.getElementById('box-name-students');
+            //     var nameStudents = document.getElementById('name-students');
+            //     var totalNames = document.createElement('p');
+            //     var textNamesStudents = document.createTextNode(activeStudents.name);
+
+            //     // totalActive.appendChild(textActive.name);
+            //     totalNames.appendChild(textNamesStudents);
+            //     nameStudents.appendChild(totalNames);
+            //     boxNameStudents.appendChild(nameStudents);
+            //     boxStudents.appendChild(boxNameStudents);
 
             /******REQUERIMIENTO 3: CANTIDAD Y PORCENTAJE DE ESTUDIANTES EXITOSAS POR GENERACION *********/
             var arrOfSuccessfulStudentsPerGeneration = [];
@@ -372,13 +383,13 @@ function selectGeneration(value) {
     var textActiveStudents = document.getElementById('text-active-students');
     var totalActive = document.createElement('p');
     var textActiveCont = document.createTextNode(active);
-    // var textActive=document.createTextNode(activeStudents.name);
 
     // totalActive.appendChild(textActive.name);
     totalActive.appendChild(textActiveCont);
     textActiveStudents.appendChild(totalActive);
     activeStudents.appendChild(textActiveStudents);
     boxStudents1.appendChild(activeStudents);
+
 
     return rewriteValues(active, activeStudents, inactive, inactiveStudents, percentageOfStudentsSatisfiedPerGeneration, averageOfTeachersPerGeneration, averageOfJediPerGeneration);
 };
