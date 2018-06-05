@@ -248,36 +248,45 @@ function selectGeneration(value) {
 
 
             /******REQUERIMIENTO 3: CANTIDAD Y PORCENTAJE DE ESTUDIANTES EXITOSAS POR GENERACION *********/
-
+            var arrOfSuccessfulStudentsPerGeneration = [];
             for (element of activeStudents) {
-                console.log(element);
+                //console.log(element);
                 var sprints = element.sprints;
-                console.log(sprints);
+                //console.log(sprints);
+                var seventyPercent = 3000 * sprints.length *.7;
+                console.log(seventyPercent);
+
+                var sumScoreOfAllSprints = 0;
+
+                  for( obj of sprints){
+                      var score = obj.score;
+                      console.log(score);
+                      var tech = score.tech;
+                      console.log(tech);
+                      var hse = score.hse;
+                      console.log(hse);
+                      var scorePerSprint = tech + hse;
+                      sumScoreOfAllSprints += scorePerSprint;
+                      console.log(sumScoreOfAllSprints);
+                      if(sumScoreOfAllSprints > seventyPercent){
+                          arrOfSuccessfulStudentsPerGeneration.push(element);
+                          console.log(arrOfSuccessfulStudentsPerGeneration);
+
+                      };//cierra if
+                  };//cierra for of sprints
+
+            };//cierra for of activeStudents
+            var numberOfSuccessfulStudentsPerGeneration = arrOfSuccessfulStudentsPerGeneration.length;
+            console.log(numberOfSuccessfulStudentsPerGeneration);
+            var hundredPercent = activeStudents.length;
+            var percentageOfSuccessfulStudentsPerGeneration = numberOfSuccessfulStudentsPerGeneration;
 
 
-            var sumScoreOfAllSprints = 0;
-            for( obj of sprints){
-                var score = obj.score;
-                console.log(score);
-                var tech = score.tech;
-                console.log(tech);
-                var hse = score.hse;
-                console.log(hse);
-                var scorePerSprint = tech + hse;
-                sumScoreOfAllSprints += scorePerSprint;
-                console.log(sumScoreOfAllSprints);
-                var arrOfSuccessfulStudentsPerGeneration = [];
-                if(sumScoreOfAllSprints > 8400){
-                    arrOfSuccessfulStudentsPerGeneration.push(element);
-                    console.log(arrOfSuccessfulStudentsPerGeneration);
-                }
-            }
 
-            };
 
             console.log(active);
             console.log(inactive);
-            console.log(activeStudents);
+            console.log("ACTIVE STUDENTS", activeStudents);
             console.log(inactiveStudents);
 
             /************************TRABAJANDO CON RATINGS*************************/
@@ -300,18 +309,18 @@ function selectGeneration(value) {
 
             //OBTENIENDO EL PORCENTAJE TOTAL DE ESTUDIANTES SATISFECHAS POR GENERACIONES
             var percentageOfStudentsSatisfiedPerGeneration = sum / ratings.length + "%";
-           
+
             var boxStudents = document.getElementById('box-students');
             var satisficedStudents = document.getElementById('satisfied-students');
             var studentsSatisfied= document.getElementById('text-satisfied-students');
             var totalSatisfied = document.createElement('p');
             var textSatisfied = document.createTextNode(percentageOfStudentsSatisfiedPerGeneration);
-            
+
             totalSatisfied.appendChild(textSatisfied);
             studentsSatisfied.appendChild(totalSatisfied);
             satisficedStudents.appendChild(studentsSatisfied);
             boxStudents.appendChild(satisficedStudents);
-        
+
 
             /******REQUERIMIENTO 5: PUNTUACIÓN PROMEDIO DE L@S PROFESORES POR GENERACION*********/
 
@@ -330,7 +339,7 @@ function selectGeneration(value) {
             var textGradesCoaches= document.getElementById('text-grades-coaches');
             var total = document.createElement('p');
             var textGrades = document.createTextNode(averageOfTeachersPerGeneration.toFixed(2));
-            
+
             total.appendChild(textGrades);
             textGradesCoaches.appendChild(total);
             gradesCoaches.appendChild(textGradesCoaches);
@@ -353,7 +362,7 @@ function selectGeneration(value) {
             var totalGradesJedis= document.getElementById('text-grades-jedis');
             var totalGrades= document.createElement('p');
             var textJedis = document.createTextNode(averageOfJediPerGeneration.toFixed(2));
-            
+
             totalGrades.appendChild(textJedis);
             totalGradesJedis.appendChild(totalGrades);
             gradesJedis.appendChild(totalGradesJedis);
@@ -378,7 +387,7 @@ function rewriteValues (active, activeStudents, inactive, inactiveStudents, perc
     //     console.log(textActive);
     // var nameStudents= document.createTextNode(arraySede.name);
     //     console.log(nameStudents);
-            
+
     // textTotalStudents.appendChild(nameStudents);
     // textTotalStudents.appendChild(textActive);
     // studentsActives.appendChild(textTotalStudents);
