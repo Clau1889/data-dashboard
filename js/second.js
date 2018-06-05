@@ -252,7 +252,7 @@ function selectGeneration(value) {
             for (obj of activeStudents){
                 var nameOfActiveStudent = obj.name;
                 arrNamesOfActiveStudents.push(nameOfActiveStudent);
-
+               
             }
 
 
@@ -283,14 +283,23 @@ function selectGeneration(value) {
 
                     };//cierra if
                 };//cierra for of sprints
-
+                
             };//cierra for of activeStudents
             var numberOfSuccessfulStudentsPerGeneration = arrOfSuccessfulStudentsPerGeneration.length;
             console.log(numberOfSuccessfulStudentsPerGeneration);
             var hundredPercent = activeStudents.length;
             var percentageOfSuccessfulStudentsPerGeneration = numberOfSuccessfulStudentsPerGeneration;
+            var boxStudents = document.getElementById('box-students');
+            var boxNameStudents = document.getElementById('box-name-students');
+            var nameStudents = document.getElementById('name-students');
+            var totalNameStudents = document.createElement('p');
+            var textNames = document.createTextNode(arrNamesOfActiveStudents);
 
-
+            // totalActive.appendChild(textActive.name);
+            totalNameStudents.appendChild(textNames);
+            nameStudents.appendChild(totalNameStudents);
+            boxNameStudents.appendChild(nameStudents);
+            boxStudents.appendChild(boxNameStudents);
             console.log(active);
             console.log(inactive);
             console.log(activeStudents);
@@ -389,11 +398,5 @@ function selectGeneration(value) {
     activeStudents.appendChild(textActiveStudents);
     boxStudents1.appendChild(activeStudents);
 
-
-    return rewriteValues(active, activeStudents, inactive, inactiveStudents, percentageOfStudentsSatisfiedPerGeneration, averageOfTeachersPerGeneration, averageOfJediPerGeneration);
-};
-
-// console.log(selectSede(value));
-function rewriteValues(active, activeStudents, inactive, inactiveStudents, percentageOfStudentsSatisfiedPerGeneration, averageOfTeachersPerGeneration, averageOfJediPerGeneration) {
-   
+    return (active, activeStudents, inactive, inactiveStudents, percentageOfStudentsSatisfiedPerGeneration, averageOfTeachersPerGeneration, averageOfJediPerGeneration);
 };
