@@ -73,7 +73,7 @@ var totalStudentsPerHeadQuarters = function(headQuarters){
 
 
 /*******************TRABAJANDO CON SEDES********************************************/
-  
+
   //FUNCION QUE RETORNA UN ARRAY2D CON LAS ESTUDIANTES POR GENERACION DE CADA SEDE
   var arrayOfStudentsPerHeadquarters = function(headquarters){
       var generationsOfHeadquarters= Object.keys(headquarters);
@@ -125,6 +125,7 @@ var totalStudentsPerHeadQuarters = function(headQuarters){
           var students = headquarters[generationsOfHeadquarters[i]].students;
           students.forEach(function(obj,index){
             var statusOfTheStudent = obj.active;
+            console.log(statusOfTheStudent);
             if(statusOfTheStudent == true){
               activeStudents.push(obj);
             } else{
@@ -145,12 +146,16 @@ var totalStudentsPerHeadQuarters = function(headQuarters){
 
 /******REQUERIMIENTO 2: SE CREA FUNCION GENERAL DEPENDIENDO LA GENERACION SELECCIONADA *********/
 function selectGeneration(value) {
-  x = value; // x es global
+    x = value; // x es global
+
+
     var getGeneration = document.getElementById(value).textContent;
     console.log(getGeneration);
 
     //ENTRAR A LAS LLAVES DE LAS GENERACION SELECCIONADA
     var generations = Object.keys(arraySede);
+
+
 
     // //INICIALIZANDO CONTADORES PARA ESTUDIATNES ACTIVAS E INACTIVAS
     var active = 0;
@@ -165,9 +170,10 @@ function selectGeneration(value) {
     for (var i = 0; i < generations.length; i++) {
         if (generations[i] == getGeneration) {
             var students = arraySede[generations[i]].students;
-            //var totalStudentsperGeneration = Object.keys(students);
+            var ratings = arraySede[generations[i]].ratings;
+            console.log(ratings);
             console.log(students);
-          //  console.log(totalStudentsperGeneration);
+
 
             //ENTRAR A LAS ESTUDIANTES POR GENERACION
             for (var j = 0; j < students.length; j++) {
@@ -183,14 +189,35 @@ function selectGeneration(value) {
                 } else if (studentsStatus == false) {
                     inactive = inactive + 1;
                     inactiveStudents.push(students[j]);
-                }
-            }
+                };
+            };//cierra for en j
             console.log(active);
             console.log(inactive);
             console.log(activeStudents);
             console.log(inactiveStudents);
-        }
-    }
+
+            /**************TRABAJANDO CON RATINGS*************************/
+
+            //OBTENIENDO EL % DE ESTUDIANTES SATISFECHA POR GENERACION
+            var sum = 0;
+            for(element of ratings){
+                //console.log(element);
+                var students = element.student;
+                //console.log(students);
+                var cumple = students["cumple"];
+                //console.log(cumple);
+                var supera = students.supera;
+                //console.log(supera);
+                var sumCumpleSupera = cumple + supera;
+                sum += sumCumpleSupera;
+                //console.log(sumCumpleSupera);
+                console.log(sum);
+            };
+
+
+        };//cierra if
+    };//cierra el for en i
+
     return pruebaPintar(active, activeStudents, inactive, inactiveStudents);
 };
 
@@ -201,4 +228,21 @@ function pruebaPintar (active, activeStudents, inactive, inactiveStudents){
   console.log(inactive);
   console.log(activeStudents);
   console.log(inactiveStudents);
-}
+};
+
+
+
+
+
+//FUNCION QUE ACCEDE A "RATINGS" DEPENDIENDO DE LA GENERACION seleccionada
+
+// function getRatings(value) {
+//
+//     var getGeneration = document.getElementById(value).textContent;
+//     console.log(getGeneration);
+//
+//     //ENTRAR A LAS LLAVES DE LAS GENERACION SELECCIONADA
+//     var generations = Object.keys(arraySede);
+//     console.log(generations);
+//
+// };
