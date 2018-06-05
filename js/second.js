@@ -256,14 +256,17 @@ function selectGeneration(value) {
         };//cierra if
     };//cierra el for en i
 
-    return pruebaPintar(active, activeStudents, inactive, inactiveStudents);
+    return pruebaPintar(active, activeStudents, inactive, inactiveStudents, percentageOfStudentsSatisfiedPerGeneration, averageOfTeachersPerGeneration, averageOfJediPerGeneration );
 };
 
 // console.log(selectSede(value));
-function pruebaPintar (active, activeStudents, inactive, inactiveStudents){
+function pruebaPintar (active, activeStudents, inactive, inactiveStudents, percentageOfStudentsSatisfiedPerGeneration, averageOfTeachersPerGeneration, averageOfJediPerGeneration ){
   console.log("Pintando HTML");
   console.log(active);
   console.log(inactive);
   console.log(activeStudents);
   console.log(inactiveStudents);
+  console.log(percentageOfStudentsSatisfiedPerGeneration);
+  console.log(averageOfTeachersPerGeneration.toFixed(2));
+  console.log(averageOfJediPerGeneration.toFixed(2));
 };
