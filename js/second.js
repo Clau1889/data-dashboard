@@ -196,9 +196,10 @@ function selectGeneration(value) {
             console.log(activeStudents);
             console.log(inactiveStudents);
 
-            /**************TRABAJANDO CON RATINGS*************************/
+            /************************TRABAJANDO CON RATINGS*************************/
+            /******REQUERIMIENTO 4: OBTENIENDO EL % DE ESTUDIANTES SATISFECHA POR GENERACION *********/
 
-            //OBTENIENDO EL % DE ESTUDIANTES SATISFECHA POR GENERACION
+            //OBTENIENDO LA SUMA DE TODOS LOS PORCENTAJES DE LOS SPRINTS POR GENERACION
             var sum = 0;
             for(element of ratings){
                 //console.log(element);
@@ -213,6 +214,10 @@ function selectGeneration(value) {
                 //console.log(sumCumpleSupera);
                 console.log(sum);
             };
+
+            //OBTENIENDO EL PORCENTAJE TOTAL DE ESTUDIANTES SATISFECHAS POR GENERACIONES
+            var percentageOfStudentsSatisfiedPerGeneration = sum/3 + "%";
+            console.log(percentageOfStudentsSatisfiedPerGeneration);
 
 
         };//cierra if
