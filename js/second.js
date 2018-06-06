@@ -306,8 +306,21 @@ function selectGeneration(value) {
 
             //PORCENTAJE DE ESTUDIANTES EXITOSAS
             var percentageOfSuccessfulStudentsPerGeneration = numberOfSuccessfulStudentsPerGeneration/activeStudents.length*100;
+                console.log(percentageOfSuccessfulStudentsPerGeneration);
 
-            var hundredPercent = activeStudents.length;
+                // var hundredPercent = activeStudents.length;
+
+                //CREANDO ELEMENTOS PARA MOSTRAR EN HTML  % ALUMNAS SATISFECHAS
+                var boxStudents3 = document.getElementById('box-students')
+                var boxSuccesfulStudents= document.getElementById('box-succesful-students');
+                var succesfulStudents= document.getElementById('succesful-students');
+                var percentageSuccesful= document.getElementById('percentage-succesful');
+                var textPercentage = document.createTextNode(percentageOfSuccessfulStudentsPerGeneration.toFixed(2) + "%");
+                
+                percentageSuccesful.appendChild(textPercentage);
+                succesfulStudents.appendChild(percentageSuccesful);
+                boxSuccesfulStudents.appendChild(succesfulStudents);
+                boxStudents3.appendChild(boxSuccesfulStudents);
             
             //CREANDO ELEMENTOS PARA QUE EN HMTL SE MUESTRE EL NOMBRE DE ESTUDIANTES ACTIVAS
             var percentageOfSuccessfulStudentsPerGeneration = numberOfSuccessfulStudentsPerGeneration;
