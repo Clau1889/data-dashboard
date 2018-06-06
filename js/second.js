@@ -255,8 +255,17 @@ function selectGeneration(value) {
             for (obj of activeStudents){
                 var nameOfActiveStudent = obj.name;
                 arrNamesOfActiveStudents.push(nameOfActiveStudent);
+            };
 
+            //HACIENDO UN ARRAY CON LOS NOMBRES DE LAS ESTUDIANTES INACTIVAS
+            var arrNamesOfInactiveStudents = [];
+            for (obj of inactiveStudents){
+                var nameOfInactiveStudent = obj.name;
+                arrNamesOfInactiveStudents.push(nameOfInactiveStudent);
+                console.log(arrNamesOfInactiveStudents);
             }
+
+
 
 
             /******REQUERIMIENTO 3: CANTIDAD Y PORCENTAJE DE ESTUDIANTES EXITOSAS POR GENERACION *********/
@@ -316,15 +325,15 @@ function selectGeneration(value) {
                 var succesfulStudents= document.getElementById('succesful-students');
                 var percentageSuccesful= document.getElementById('percentage-succesful');
                 var textPercentage = document.createTextNode(percentageOfSuccessfulStudentsPerGeneration.toFixed(2) + "%");
-                
+
                 percentageSuccesful.appendChild(textPercentage);
                 succesfulStudents.appendChild(percentageSuccesful);
                 boxSuccesfulStudents.appendChild(succesfulStudents);
                 boxStudents3.appendChild(boxSuccesfulStudents);
-            
+
             //CREANDO ELEMENTOS PARA QUE EN HMTL SE MUESTRE EL NOMBRE DE ESTUDIANTES ACTIVAS
             var percentageOfSuccessfulStudentsPerGeneration = numberOfSuccessfulStudentsPerGeneration;
-            
+
             var boxStudents = document.getElementById('box-students');
             var boxNameStudents = document.getElementById('box-name-actives-students');
             var nameStudents = document.getElementById('active-name-students');
@@ -445,5 +454,3 @@ function selectGeneration(value) {
 
     return (active, activeStudents, inactive, inactiveStudents, percentageOfStudentsSatisfiedPerGeneration, averageOfTeachersPerGeneration, averageOfJediPerGeneration);
 };
-
-
