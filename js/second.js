@@ -252,12 +252,13 @@ function selectGeneration(value) {
             for (obj of activeStudents){
                 var nameOfActiveStudent = obj.name;
                 arrNamesOfActiveStudents.push(nameOfActiveStudent);
-               
+
             }
 
 
             /******REQUERIMIENTO 3: CANTIDAD Y PORCENTAJE DE ESTUDIANTES EXITOSAS POR GENERACION *********/
             var arrOfSuccessfulStudentsPerGeneration = [];
+
             for (element of activeStudents) {
                 //console.log(element);
                 var sprints = element.sprints;
@@ -295,12 +296,15 @@ function selectGeneration(value) {
                 succesfulStudents.appendChild(totalNameStudents);
                 boxSuccesfulStudents.appendChild(succesfulStudents);
                 boxStudents.appendChild(boxSuccesfulStudents);
-                
-            var numberOfSuccessfulStudentsPerGeneration = arrOfSuccessfulStudentsPerGeneration.length;
-            console.log(numberOfSuccessfulStudentsPerGeneration);
 
-            var hundredPercent = activeStudents.length;
-            var percentageOfSuccessfulStudentsPerGeneration = numberOfSuccessfulStudentsPerGeneration;
+            //CANTIDAD DE ESTUDIANTES EXITOSAS
+            var numberOfSuccessfulStudentsPerGeneration = arrOfSuccessfulStudentsPerGeneration.length;
+            // console.log(numberOfSuccessfulStudentsPerGeneration);
+
+            //PORCENTAJE DE ESTUDIANTES EXITOSAS
+            var percentageOfSuccessfulStudentsPerGeneration = numberOfSuccessfulStudentsPerGeneration/activeStudents.length*100;
+
+            console.log(percentageOfSuccessfulStudentsPerGeneration);
             var boxStudents = document.getElementById('box-students');
             var boxNameStudents = document.getElementById('box-name-students');
             var nameStudents = document.getElementById('name-students');
