@@ -147,6 +147,13 @@ section#contain-total-sede{
     width: 60%;
 }
 
+section > p#general{
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding-left: 9rem;
+}
+
 #students-general{
     background-color: #FFE521;
     box-sizing: border-box;
