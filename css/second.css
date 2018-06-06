@@ -87,7 +87,7 @@ section > ul{
     width: 95%;
 }
 
-li.tab{
+.tab{
     background-color: #F5EFEC;
     border-radius: 5%;
     color: #000000;
@@ -98,6 +98,22 @@ li.tab{
     height: auto;
     list-style: none;
     margin-left:-0.2rem;
+    margin-top: 2rem;
+    padding: 0.5rem;
+    width: auto;
+}
+
+#tab2{
+    background-color: #F5EFEC;
+    border-radius: 5%;
+    color: #000000;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    font-size: 1rem;
+    display: inline-block;
+    height: auto;
+    list-style: none;
+    margin-left:-27.5rem;
     margin-top: 2rem;
     padding: 0.5rem;
     width: auto;
@@ -213,7 +229,7 @@ section#contain-total-sede{
     width:10rem;
 }
 
-#box-name-students {
+#box-name-actives-students {
   display: inline-block;
   height: auto;
   margin-top:1rem;
@@ -228,6 +244,19 @@ section#contain-total-sede{
 
 #box-succesful-students {
   display: inline-block;
+  height: auto;
+  margin-top:1rem;
+  padding: 0.5rem;
+  text-align: center;
+  width:16rem;
+  font-family: 'Quicksand', sans-serif;
+  text-align: center;
+  color: #34495E;
+  margin: .5rem;
+}
+
+#inactive-students{
+ display: inline-block;
   height: auto;
   margin-top:1rem;
   padding: 0.5rem;
