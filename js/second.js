@@ -1,3 +1,4 @@
+
 /********ENCONTRANDO SEDE ********/
 //FUNCION: "query-string PARA ACCEDER A LOS VALORES DE LA SEDE REQUERIDA
 function getParameterByName(name, url) {
@@ -300,10 +301,11 @@ function selectGeneration(value) {
             console.log(numberOfSuccessfulStudentsPerGeneration);
 
             var hundredPercent = activeStudents.length;
+            
             var percentageOfSuccessfulStudentsPerGeneration = numberOfSuccessfulStudentsPerGeneration;
             var boxStudents = document.getElementById('box-students');
-            var boxNameStudents = document.getElementById('box-name-students');
-            var nameStudents = document.getElementById('name-students');
+            var boxNameStudents = document.getElementById('box-name-actives-students');
+            var nameStudents = document.getElementById('active-name-students');
             var totalNameStudents = document.createElement('p');
             var textNames = document.createTextNode(arrNamesOfActiveStudents);
 
@@ -406,5 +408,21 @@ function selectGeneration(value) {
     activeStudents.appendChild(textActiveStudents);
     boxStudents1.appendChild(activeStudents);
 
+/****************/
+    var boxStudents2 = document.getElementById('box-students');
+    var inactiveStudents = document.getElementById('inactive-students');
+    var textInactiveStudents = document.getElementById('text-inactive-students');
+    var totalInactive = document.createElement('p');
+    var textInactiveCont = document.createTextNode(inactive);
+
+    // totalActive.appendChild(textActive.name);
+    totalInactive.appendChild(textInactiveCont);
+    textInactiveStudents.appendChild(totalInactive);
+    inactiveStudents.appendChild(textInactiveStudents);
+    boxStudents2.appendChild(inactiveStudents);
+
+
     return (active, activeStudents, inactive, inactiveStudents, percentageOfStudentsSatisfiedPerGeneration, averageOfTeachersPerGeneration, averageOfJediPerGeneration);
 };
+
+
