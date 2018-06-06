@@ -123,6 +123,7 @@ var arrayOfActiveStudentsPerHeadquarters = function (headquarters) {
             }
         });
     }
+    //CREANDO ELEMENTOS PARA PLASMAR EN HTML CANTIDAD DE ALUMNAS ACTIVAS
     var containStudents = document.getElementById('contain-total-sede');
     var totalActiveStudents = document.getElementById('students-actives');
     var textTotalActiveStudents = document.createElement('p');
@@ -142,7 +143,7 @@ console.log(arrayOfActiveStudentsPerHeadquarters(arraySede));
 
 
 /************FUNCIÓN QUE RETORNA UN ARRAY CON LAS ESTUDIANTES INACTIVAS DE CADA SEDE**********************/
-var arrayOfActiveStudentsPerHeadquarters = function (headquarters) {
+var arrayOfInactiveStudentsPerHeadquarters = function (headquarters) {
     var generationsOfHeadquarters = Object.keys(headquarters);
     //  generationsOfHeadquarters = ["2017-1", "2017-2"]
     var studentsperGeneration = [];
@@ -157,6 +158,7 @@ var arrayOfActiveStudentsPerHeadquarters = function (headquarters) {
             }
         });
     }
+    //CREANDO ELEMENTOS PARA PLASMARLOS EN HTML, LA CANTIDAD DE ALUMNAS INACTIVAS
     var containStudents = document.getElementById('contain-total-sede');
     var totalInactiveStudents = document.getElementById('students-inactives');
     var textTotalInactiveStudents = document.createElement('p');
@@ -172,7 +174,7 @@ var arrayOfActiveStudentsPerHeadquarters = function (headquarters) {
     return inactiveStudents;
 };
 
-console.log(arrayOfActiveStudentsPerHeadquarters(arraySede));
+console.log(arrayOfInactiveStudentsPerHeadquarters(arraySede));
 
 /************FUNCIÓN QUE RETORNA UN ARRAY2D CON LAS ESTUDIANTES ACTIVAS E INACTIVAS POR SEDE**********************/
 var statusOfTheStudentsPerHeadquarters = function (headquarters) {
@@ -304,15 +306,31 @@ function selectGeneration(value) {
 
             //PORCENTAJE DE ESTUDIANTES EXITOSAS
             var percentageOfSuccessfulStudentsPerGeneration = numberOfSuccessfulStudentsPerGeneration/activeStudents.length*100;
+                console.log(percentageOfSuccessfulStudentsPerGeneration);
 
+                // var hundredPercent = activeStudents.length;
 
+                //CREANDO ELEMENTOS PARA MOSTRAR EN HTML  % ALUMNAS SATISFECHAS
+                var boxStudents3 = document.getElementById('box-students')
+                var boxSuccesfulStudents= document.getElementById('box-succesful-students');
+                var succesfulStudents= document.getElementById('succesful-students');
+                var percentageSuccesful= document.getElementById('percentage-succesful');
+                var textPercentage = document.createTextNode(percentageOfSuccessfulStudentsPerGeneration.toFixed(2) + "%");
+                
+                percentageSuccesful.appendChild(textPercentage);
+                succesfulStudents.appendChild(percentageSuccesful);
+                boxSuccesfulStudents.appendChild(succesfulStudents);
+                boxStudents3.appendChild(boxSuccesfulStudents);
+            
+            //CREANDO ELEMENTOS PARA QUE EN HMTL SE MUESTRE EL NOMBRE DE ESTUDIANTES ACTIVAS
+            var percentageOfSuccessfulStudentsPerGeneration = numberOfSuccessfulStudentsPerGeneration;
+            
             var boxStudents = document.getElementById('box-students');
             var boxNameStudents = document.getElementById('box-name-actives-students');
             var nameStudents = document.getElementById('active-name-students');
             var totalNameStudents = document.createElement('p');
             var textNames = document.createTextNode(arrNamesOfActiveStudents);
 
-            // totalActive.appendChild(textActive.name);
             totalNameStudents.appendChild(textNames);
             nameStudents.appendChild(totalNameStudents);
             boxNameStudents.appendChild(nameStudents);
