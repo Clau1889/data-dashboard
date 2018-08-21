@@ -1,42 +1,26 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Data Dashboard</title>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Anton|Handlee|Quicksand|Roboto|Tajawal" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
-  </head>
-  <body>
-    <!--Se crea pagina de inicio para seleccionar sede-->
-    <main>
-      <img class="logo" src="assets/images/black-logo.png" alt="logo">
-      <hr>
-      <div class="container-logo-laboratoria">
-        <img class="logo-Laboratoria" src="assets/images/Laboratoria_Logo_blanco.png" alt="logo Laboratoria">
-      </div>
-      <section class="show-me">
-        <div class="container-show-me">
-          <span id="vertical-menu">Choose a location</span>
-          <hr class="hr-span-choose">
-          <ul id="nav">
-            <li id="first-list"><a href="#">Location<i class="fas fa-caret-down"></i></a></li>
-              <ul>
-                <!--Listas de opciones: que usaran un enlace especifico de su sede(href) y se recargara en la misma pestana(target)-->
-                <li id="CDMX" class="list"><a href="second.html?sede=CDMX" target="_self">CDMX</a></li>
-                <li id="Arequipa" class="list"><a href="second.html?sede=AQP" target="_self">Arequipa</a></li>
-                <li id="Lima" class="list"><a href="second.html?sede=LIM" target="_self">Lima</a></li>
-                <li id="Santiago de Chile" class="list"><a href="second.html?sede=SCL" target="_self">Santiago de Chile</a></li>
-              </ul>
-          </ul>
-          <img  class="loguito"src="assets/images/L_RGB_-02.png" alt="loguito">
-        </div>
-      </section>
-      <section class="image-cont"><img class="img-start"src="assets/images/fondo1.jpg" alt="foto"> </section>
-    </main>
-		<!-- Base de datos -->
-		<script src="./js/data.js"></script>
-		<!--Aquí va tus archivos JS -->
-    <!-- <script src="./js/app.js"></script> -->
-  </body>
+</head>
+<body>
+    <div class="container">
+        <select id="locations">
+            <option value="location">Location</option>
+        </select>
+        <select id="generations">
+            <option value="generation">Generation</option>
+        </select>
+    </div>
+
+
+    <!--Data Base-->
+    <script src="js/data.js"></script>
+    <!--Enlace js-->
+    <script src="js/app.js"></script>
+</body>
 </html>
