@@ -61,9 +61,13 @@ const getStudents= function (event){
     let active = 0;
     let inactive = 0;
 
-    let dataStudents= document.getElementById('data-students');
-    // let template = '<h3 id="total">Total Students: + '+totalStudents+' </h3>'
-    // dataStudents.appendChild(template);
+    //Handlebar para el Total de estudiantes
+    let templateTotalStudent= document.getElementById('total-students').innerHTML;
+    console.log(templateTotalStudent);
+    let compileTotalStudents = Handlebars.compile(templateTotalStudent);
+    let compiledHTMLStudents= compileTotalStudents({students:totalStudents});
+    document.getElementById('total-students-generation').innerHTML += "";
+    document.getElementById('total-students-generation').innerHTML += compiledHTMLStudents;
 
     for (j =0; j < students.length; j ++){
         eachStudent= students[j];
@@ -82,14 +86,29 @@ const getStudents= function (event){
         } else {
             active ++;
         }
+
     }
+
+    //Handlebar para el nombre y foto de cada estudiante
+    let templateStudent= document.getElementById('data-students').innerHTML;
+    console.log(templateStudent);
+    let compile = Handlebars.compile(templateStudent);
+    var newTemplate ="";
+    document.getElementById('students').innerHTML = "";
+    
+    for (let i=0; i < totalStudents; i++){
+        console.log(students[i]);
+        var compiledHTML= compile(students[i]);
+        newTemplate += compiledHTML;
+    }
+    document.getElementById('students').innerHTML = newTemplate;
 
                         /***********************\
                         *    Active-Students    *
                         \***********************/
     let totalActive= active;
     console.log(totalActive);
-    let percentageActive= Math.round((totalActive* 100 / totalStudents).toFixed(2));
+    let percentageActive= (Math.round(totalActive* 100 / totalStudents) + "%");
     console.log(percentageActive);
 
                         /***********************\
@@ -97,9 +116,13 @@ const getStudents= function (event){
                         \***********************/
     let totalInactive= inactive;
     console.log(totalInactive);
-    let percentageInactive= Math.round((totalInactive * 100 / totalStudents).toFixed(2))
+    let percentageInactive= (Math.round(totalInactive * 100 / totalStudents) + "%")
     console.log(percentageInactive);
 }
+
+                        /***********************\
+                        *        SPRINTS       *
+                        \***********************/
 
 
 //Dando click a cada sede para obtener sus generaciones
@@ -107,5 +130,7 @@ document.getElementById('locations').addEventListener('change', getGenerations);
 
 //Dando click a cada generación para obtener sus estudiantes
 document.getElementById('generations').addEventListener('change', getStudents);
+
+
 
 getLocation(data);

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,26 +8,38 @@
     <title>Data Dashboard</title>
     <link rel="stylesheet" href="css/main.css">
 </head>
-<body>
-    <div class="container">
-        <select id="locations">
-            <option value="location">Location</option>
-        </select>
-        <select id="generations">
-            <option id="option-generation" value="generation">Generation</option>
-        </select>
-    </div>
-    <section id="data-students" class="container">
-        <!-- <h3 id="total">Total Students:</h3> -->
-        <!-- <div class="card">
-            <p>Name</p>
-            <img src="" alt="">
-        </div> -->
-    </section>
 
+<body>
+        <div class="container">
+            <select id="locations">
+                <option value="location">Location</option>
+            </select>
+            <select id="generations">
+                <option id="option-generation" value="generation">Generation</option>
+            </select>
+        </div>
+
+        <div id="total-students-generation"></div>
+        <div id="students" class="container"></div>
+
+        <!--Usando Handlebars para total de estudiantes por generación-->
+        <script type="text/x-handlebars-tamplate" id="total-students">
+            <h3 id="total">Total Students: {{students}} </h3>
+        </script>
+
+        <!--Usando Handlebars para nombre y foto de cada estudiante-->
+        <script type="text/x-handlebars-tamplate" id="data-students">
+                <p>{{name}}</p>
+                <img src="{{photo}}" alt="photo-student">
+        </script>
+         
+
+    <!--Handlebars-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
     <!--Data Base-->
     <script src="js/data.js"></script>
     <!--Enlace js-->
     <script src="js/app.js"></script>
 </body>
+
 </html>
